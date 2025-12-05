@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gogpu/.github/main/assets/logo.png" alt="GoGPU Logo" width="200" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gogpu/.github/main/assets/logo.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/gogpu/.github/main/assets/logo.png">
+    <img src="https://raw.githubusercontent.com/gogpu/.github/main/assets/logo.png" alt="GoGPU Logo" width="180" />
+  </picture>
 </p>
 
 <h1 align="center">GoGPU</h1>
@@ -17,47 +21,57 @@
 
 ---
 
-## 🎯 Mission
+## Why GoGPU?
 
-Build the most ergonomic GPU computing ecosystem for Go — from graphics to machine learning — with **zero CGO dependencies**.
+Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/comments/1pdw9i7/go_deserves_more_support_in_gui_development/), we're building the GPU computing ecosystem that Go deserves — from low-level graphics to high-level GUI, all with **zero CGO**.
 
-## 📦 Projects
+---
+
+## Projects
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework for Go | 🚧 Active |
-| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler (WGSL → SPIR-V) | 🚧 Active |
-| **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | 📋 Planned |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation | 🔮 Future |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | Active |
+| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler (WGSL → SPIR-V) | Active |
+| **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | Planned |
+| **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Future |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation | Future |
 
-## 🏗️ Architecture
+---
+
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Your Application                         │
+│              Your Application                                │
 ├─────────────────────────────────────────────────────────────┤
-│  born-ml/born        gogpu/gogpu         gogpu/gg          │
-│  (ML Framework)    (Graphics)          (2D Graphics)       │
+│   gogpu/ui (GUI)   │   born-ml/born   │   Your Framework    │
 ├─────────────────────────────────────────────────────────────┤
-│              WebGPU API (gogpu ecosystem)                   │
+│              gogpu/gg (2D Graphics)                          │
 ├─────────────────────────────────────────────────────────────┤
-│   go-webgpu/webgpu    ────────▶    gogpu/wgpu              │
-│   (FFI, works now)                 (Pure Go, future)        │
+│              gogpu/gogpu (Graphics Framework)                │
+│         GPU abstraction, windowing, input, math              │
+├─────────────────────────────────────────────────────────────┤
+│   go-webgpu/webgpu (FFI)    →    gogpu/wgpu (Pure Go)       │
 ├─────────────────────────────────────────────────────────────┤
 │              Vulkan  │  Metal  │  DX12  │  OpenGL           │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## ✨ Key Features
+---
+
+## Key Features
 
 | Feature | Description |
 |:--------|:------------|
-| **Zero CGO** | No C compiler required, simple cross-compilation |
+| **Zero CGO** | No C compiler required, simple `go build` |
 | **WebGPU API** | Modern, portable GPU abstraction |
-| **Pure Go Goal** | Gradually replacing FFI with native implementation |
-| **Production Ready** | Powers [born-ml](https://github.com/born-ml/born) ML framework |
+| **Layered Design** | Use only what you need |
+| **Pure Go Goal** | Gradually replacing FFI with native Go |
 
-## 🚀 Quick Start
+---
+
+## Quick Start
 
 ```go
 package main
@@ -80,7 +94,11 @@ func main() {
 }
 ```
 
-## 🔗 Ecosystem
+> **Note:** API is in active development and will change.
+
+---
+
+## Ecosystem
 
 | Project | Organization | Description |
 |:--------|:-------------|:------------|
@@ -88,41 +106,51 @@ func main() {
 | [goffi](https://github.com/go-webgpu/goffi) | go-webgpu | Pure Go FFI library |
 | [born](https://github.com/born-ml/born) | born-ml | Pure Go ML framework |
 
-## 📊 Why GoGPU?
+---
 
-| Problem | GoGPU Solution |
-|:--------|:---------------|
-| CGO complexity | Zero CGO — just `go build` |
-| Cross-compilation pain | Works with `GOOS`/`GOARCH` |
-| C compiler requirement | Pure Go, no toolchain needed |
-| WebGPU in Go | First-class support |
+## Roadmap
 
-## 🗺️ Roadmap
+### Foundation (Done)
+- [x] Zero-CGO WebGPU bindings (go-webgpu/webgpu)
+- [x] Pure Go FFI (go-webgpu/goffi)
 
-- [x] Zero-CGO WebGPU bindings (go-webgpu)
-- [x] Pure Go FFI (goffi)
-- [ ] Graphics framework (gogpu) — **in progress**
-- [ ] Shader compiler (naga) — **in progress**
-- [ ] 2D graphics (gg)
-- [ ] Pure Go WebGPU (wgpu)
+### Phase 1 — Graphics (In Progress)
+- [ ] Graphics framework (gogpu/gogpu)
+- [ ] Shader compiler (gogpu/naga)
 
-## 🤝 Contributing
+### Phase 2 — 2D
+- [ ] 2D graphics library (gogpu/gg)
+- [ ] Sprite batching, text rendering
 
-We welcome contributions! See individual repository CONTRIBUTING.md files for guidelines.
+### Phase 3 — GUI
+- [ ] Widget toolkit (gogpu/ui)
+- [ ] Layouts, styling, themes
+
+### Phase 4 — Pure Go
+- [ ] Pure Go WebGPU (gogpu/wgpu)
+- [ ] No external dependencies
+
+---
+
+## Contributing
+
+We welcome contributions! See individual repository CONTRIBUTING.md files.
 
 **Areas where we need help:**
 - WGSL parser implementation
-- WebGPU examples
-- Documentation and tutorials
-- Testing on different GPUs
+- WebGPU examples and tutorials
+- Platform testing (Linux, macOS, Windows)
+- Documentation
 
-## 📄 License
+---
+
+## License
 
 All projects are licensed under the **MIT License**.
 
 ---
 
 <p align="center">
-  <sub>Building the future of GPU computing in Go</sub><br>
+  <sub>Building the GPU computing ecosystem Go deserves</sub><br>
   <a href="https://github.com/gogpu">github.com/gogpu</a>
 </p>
