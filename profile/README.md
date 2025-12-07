@@ -31,11 +31,11 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | Active |
-| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler (WGSL → SPIR-V) | Active |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0-alpha |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.1.0-alpha |
+| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler (WGSL lexer + parser done) | Active |
 | **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | Planned |
-| **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Future |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation | Future |
+| **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
 
@@ -110,25 +110,28 @@ func main() {
 
 ## Roadmap
 
-### Foundation (Done)
+### Foundation ✅
 - [x] Zero-CGO WebGPU bindings (go-webgpu/webgpu)
 - [x] Pure Go FFI (go-webgpu/goffi)
 
-### Phase 1 — Graphics (In Progress)
-- [ ] Graphics framework (gogpu/gogpu)
-- [ ] Shader compiler (gogpu/naga)
+### Phase 1 — Graphics ✅
+- [x] Graphics framework (gogpu/gogpu) — Triangle, Textures, Dual Backend
+- [x] Shader compiler (gogpu/naga) — WGSL lexer + parser complete
 
-### Phase 2 — 2D
+### Phase 2 — Pure Go WebGPU (In Progress)
+- [x] WebGPU types package (gogpu/wgpu/types)
+- [x] Core validation & state (gogpu/wgpu/core)
+- [x] HAL abstraction layer (gogpu/wgpu/hal)
+- [ ] OpenGL backend (gogpu/wgpu/hal/gl)
+- [ ] Vulkan backend (gogpu/wgpu/hal/vk)
+
+### Phase 3 — 2D Graphics
 - [ ] 2D graphics library (gogpu/gg)
 - [ ] Sprite batching, text rendering
 
-### Phase 3 — GUI
+### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
 - [ ] Layouts, styling, themes
-
-### Phase 4 — Pure Go
-- [ ] Pure Go WebGPU (gogpu/wgpu)
-- [ ] No external dependencies
 
 ---
 
@@ -137,9 +140,9 @@ func main() {
 We welcome contributions! See individual repository CONTRIBUTING.md files.
 
 **Areas where we need help:**
-- WGSL parser implementation
+- Pure Go GPU backends (OpenGL, Vulkan, Metal, DX12)
+- Platform support (Linux, macOS — Windows works!)
 - WebGPU examples and tutorials
-- Platform testing (Linux, macOS, Windows)
 - Documentation
 
 ---
