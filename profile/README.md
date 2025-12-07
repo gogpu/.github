@@ -43,14 +43,14 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│              Your Application                                │
+│              Your Application                               │
 ├─────────────────────────────────────────────────────────────┤
 │   gogpu/ui (GUI)   │   born-ml/born   │   Your Framework    │
 ├─────────────────────────────────────────────────────────────┤
-│              gogpu/gg (2D Graphics)                          │
+│              gogpu/gg (2D Graphics)                         │
 ├─────────────────────────────────────────────────────────────┤
-│              gogpu/gogpu (Graphics Framework)                │
-│         GPU abstraction, windowing, input, math              │
+│              gogpu/gogpu (Graphics Framework)               │
+│         GPU abstraction, windowing, input, math             │
 ├─────────────────────────────────────────────────────────────┤
 │   go-webgpu/webgpu (FFI)    →    gogpu/wgpu (Pure Go)       │
 ├─────────────────────────────────────────────────────────────┤
