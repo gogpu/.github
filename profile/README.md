@@ -118,12 +118,12 @@ func main() {
 - [x] Graphics framework (gogpu/gogpu) — Triangle, Textures, Dual Backend
 - [x] Shader compiler (gogpu/naga) — WGSL lexer + parser complete
 
-### Phase 2 — Pure Go WebGPU (In Progress)
+### Phase 2 — Pure Go WebGPU ✅
 - [x] WebGPU types package (gogpu/wgpu/types)
 - [x] Core validation & state (gogpu/wgpu/core)
 - [x] HAL abstraction layer (gogpu/wgpu/hal)
-- [ ] OpenGL backend (gogpu/wgpu/hal/gl)
-- [ ] Vulkan backend (gogpu/wgpu/hal/vk)
+- [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~3.5K LOC
+- [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, HAL complete!**
 
 ### Phase 3 — 2D Graphics
 - [ ] 2D graphics library (gogpu/gg)
