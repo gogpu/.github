@@ -124,6 +124,7 @@ func main() {
 - [x] HAL abstraction layer (gogpu/wgpu/hal)
 - [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~3.5K LOC
 - [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
+- [x] **Software backend (gogpu/wgpu/hal/software) — ~1K LOC, headless rendering!**
 
 ### Phase 3 — 2D Graphics
 - [ ] 2D graphics library (gogpu/gg)
@@ -143,6 +144,7 @@ We welcome contributions! See individual repository CONTRIBUTING.md files.
 - Pure Go GPU backends (Metal, DX12)
 - WebGPU examples and tutorials
 - Documentation
+- Software rasterization (Phase 2 of software backend)
 
 ---
 
