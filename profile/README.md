@@ -32,7 +32,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0-alpha |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.1.0-alpha |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.2.0 |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler (WGSL lexer + parser done) | Active |
 | **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | Planned |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
@@ -123,7 +123,7 @@ func main() {
 - [x] Core validation & state (gogpu/wgpu/core)
 - [x] HAL abstraction layer (gogpu/wgpu/hal)
 - [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~3.5K LOC
-- [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, HAL complete!**
+- [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
 
 ### Phase 3 — 2D Graphics
 - [ ] 2D graphics library (gogpu/gg)
@@ -140,8 +140,7 @@ func main() {
 We welcome contributions! See individual repository CONTRIBUTING.md files.
 
 **Areas where we need help:**
-- Pure Go GPU backends (OpenGL, Vulkan, Metal, DX12)
-- Platform support (Linux, macOS — Windows works!)
+- Pure Go GPU backends (Metal, DX12)
 - WebGPU examples and tutorials
 - Documentation
 
