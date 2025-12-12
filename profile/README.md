@@ -33,7 +33,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 |:-----------|:------------|:------:|
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.3.0 |
-| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | **v0.3.0** |
+| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | **v0.4.0** |
 | **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | Planned |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
@@ -116,7 +116,7 @@ func main() {
 
 ### Phase 1 — Graphics ✅
 - [x] Graphics framework (gogpu/gogpu) — Triangle, Textures, Dual Backend
-- [x] Shader compiler (gogpu/naga) — **WGSL → SPIR-V + textures (~15K LOC)**
+- [x] Shader compiler (gogpu/naga) — **WGSL → SPIR-V + compute shaders (~17K LOC)**
 
 ### Phase 2 — Pure Go WebGPU ✅
 - [x] WebGPU types package (gogpu/wgpu/types)
