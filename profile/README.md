@@ -34,7 +34,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.3.0 |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | **v0.4.0** |
-| **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | Planned |
+| **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | **v0.1.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
@@ -126,9 +126,10 @@ func main() {
 - [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
 - [x] **Software backend (gogpu/wgpu/hal/software) — ~1K LOC, headless rendering!**
 
-### Phase 3 — 2D Graphics
-- [ ] 2D graphics library (gogpu/gg)
-- [ ] Sprite batching, text rendering
+### Phase 3 — 2D Graphics ✅
+- [x] 2D graphics library (gogpu/gg) — **v0.1.0, software renderer!**
+- [ ] Text rendering, image loading (v0.2.0)
+- [ ] GPU acceleration (v0.4.0)
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
