@@ -32,7 +32,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.3.0 |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.4.0 |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | **v0.4.0** |
 | **[gg](https://github.com/gogpu/gg)** | Simple 2D graphics library | **v0.1.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
@@ -122,7 +122,7 @@ func main() {
 - [x] WebGPU types package (gogpu/wgpu/types)
 - [x] Core validation & state (gogpu/wgpu/core)
 - [x] HAL abstraction layer (gogpu/wgpu/hal)
-- [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~3.5K LOC
+- [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~7.5K LOC, Windows + Linux
 - [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
 - [x] **Software backend (gogpu/wgpu/hal/software) — ~1K LOC, headless rendering!**
 
