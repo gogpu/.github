@@ -34,7 +34,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.4.0 |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics with scene graph, parallel rendering, SIMD | **v0.7.0** |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics with backend abstraction, scene graph, SIMD | **v0.8.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
