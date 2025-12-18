@@ -32,7 +32,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.4.0 |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.5.0** |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
 | **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
@@ -124,7 +124,7 @@ func main() {
 - [x] HAL abstraction layer (gogpu/wgpu/hal)
 - [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~7.5K LOC, Windows + Linux
 - [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
-- [x] **Software backend (gogpu/wgpu/hal/software) — ~1K LOC, headless rendering!**
+- [x] **Software backend (gogpu/wgpu/hal/software) — ~10K LOC, full rasterizer!**
 
 ### Phase 3 — 2D Graphics ✅
 - [x] 2D graphics library (gogpu/gg) — **v0.9.0 with GPU backend!**
@@ -151,7 +151,7 @@ We welcome contributions! See individual repository CONTRIBUTING.md files.
 - Pure Go GPU backends (Metal, DX12)
 - WebGPU examples and tutorials
 - Documentation
-- Software rasterization (Phase 2 of software backend)
+- GUI widget toolkit (gogpu/ui)
 
 ---
 
