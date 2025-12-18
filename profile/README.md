@@ -34,7 +34,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | v0.4.0 |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics with backend abstraction, scene graph, SIMD | **v0.8.0** |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
@@ -127,11 +127,15 @@ func main() {
 - [x] **Software backend (gogpu/wgpu/hal/software) — ~1K LOC, headless rendering!**
 
 ### Phase 3 — 2D Graphics ✅
-- [x] 2D graphics library (gogpu/gg) — **v0.5.0, software renderer!**
-- [x] **Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback, iter.Seq!**
-- [x] **Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff, blend modes!**
-- [x] **Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes, linear blending!**
-- [x] **SIMD Optimization (v0.5.0) — Fast div255, sRGB LUTs, wide types, batch blending (260x faster)!**
+- [x] 2D graphics library (gogpu/gg) — **v0.9.0 with GPU backend!**
+- [x] Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback
+- [x] Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff
+- [x] Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes
+- [x] SIMD Optimization (v0.5.0) — Fast div255, sRGB LUTs, batch blending (260x faster)
+- [x] **Parallel Rendering (v0.6.0) — TileGrid, WorkerPool, lock-free DirtyRegion!**
+- [x] **Scene Graph (v0.7.0) — Retained mode, 13 shapes, filters, layer cache!**
+- [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
+- [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
