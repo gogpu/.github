@@ -34,7 +34,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.5.0** |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.0** |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.2** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
@@ -127,7 +127,7 @@ func main() {
 - [x] **Software backend (gogpu/wgpu/hal/software) — ~10K LOC, full rasterizer!**
 
 ### Phase 3 — 2D Graphics ✅
-- [x] 2D graphics library (gogpu/gg) — **v0.9.0 with GPU backend!**
+- [x] 2D graphics library (gogpu/gg) — **v0.9.2 with GPU backend!**
 - [x] Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback
 - [x] Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff
 - [x] Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes
