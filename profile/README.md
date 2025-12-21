@@ -31,7 +31,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | v0.3.0 |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.4.0** |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.5.0** |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
 | **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.2** |
@@ -136,6 +136,12 @@ func main() {
 - [x] **Scene Graph (v0.7.0) — Retained mode, 13 shapes, filters, layer cache!**
 - [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
 - [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
+
+### Phase 3.5 — Platform Expansion (In Progress)
+- [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
+- [ ] Linux X11 (Q1 2026)
+- [ ] macOS Cocoa (Q1 2026)
+- [ ] Metal backend (Q2 2026)
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
