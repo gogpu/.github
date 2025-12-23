@@ -31,7 +31,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.5.0** |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.6.1** |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.6.0** |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V/MSL | **v0.5.0** |
 | **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.2** |
@@ -140,9 +140,10 @@ func main() {
 
 ### Phase 3.5 — Platform Expansion ✅
 - [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
-- [x] **macOS Cocoa (v0.5.0) — Pure Go via goffi Objective-C runtime!**
-- [x] **Metal backend (v0.6.0) — Apple GPU support via MSL shaders!**
-- [ ] Linux X11 (Q1 2026)
+- [x] **Linux X11 (v0.6.0) — Pure Go wire protocol, ~5K LOC!**
+- [x] **macOS Cocoa (v0.5.0) — Pure Go via goffi, ~950 LOC!**
+- [x] **Metal backend (wgpu v0.6.0) — Pure Go via goffi, ~2.5K LOC!**
+- [x] **MSL shader output (naga v0.5.0) — WGSL → Metal Shading Language!**
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
