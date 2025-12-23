@@ -31,9 +31,9 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.4.0** |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.5.0** |
-| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V | v0.4.0 |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.5.0** |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.6.0** |
+| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V/MSL | **v0.5.0** |
 | **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, SIMD | **v0.9.2** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
@@ -116,7 +116,7 @@ func main() {
 
 ### Phase 1 — Graphics ✅
 - [x] Graphics framework (gogpu/gogpu) — Triangle, Textures, Dual Backend
-- [x] Shader compiler (gogpu/naga) — **WGSL → SPIR-V + compute shaders (~17K LOC)**
+- [x] Shader compiler (gogpu/naga) — **WGSL → SPIR-V/MSL + compute shaders (~21K LOC)**
 
 ### Phase 2 — Pure Go WebGPU ✅
 - [x] WebGPU types package (gogpu/wgpu/types)
@@ -125,6 +125,7 @@ func main() {
 - [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~7.5K LOC, Windows + Linux
 - [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
 - [x] **Software backend (gogpu/wgpu/hal/software) — ~10K LOC, full rasterizer!**
+- [x] **Metal backend (gogpu/wgpu/hal/metal) — ~2.5K LOC, macOS/iOS!**
 
 ### Phase 3 — 2D Graphics ✅
 - [x] 2D graphics library (gogpu/gg) — **v0.9.2 with GPU backend!**
@@ -137,11 +138,11 @@ func main() {
 - [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
 - [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
 
-### Phase 3.5 — Platform Expansion (In Progress)
+### Phase 3.5 — Platform Expansion ✅
 - [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
+- [x] **macOS Cocoa (v0.5.0) — Pure Go via goffi Objective-C runtime!**
+- [x] **Metal backend (v0.6.0) — Apple GPU support via MSL shaders!**
 - [ ] Linux X11 (Q1 2026)
-- [ ] macOS Cocoa (Q1 2026)
-- [ ] Metal backend (Q2 2026)
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
@@ -154,7 +155,7 @@ func main() {
 We welcome contributions! See individual repository CONTRIBUTING.md files.
 
 **Areas where we need help:**
-- Pure Go GPU backends (Metal, DX12)
+- Pure Go GPU backends (DX12)
 - WebGPU examples and tutorials
 - Documentation
 - GUI widget toolkit (gogpu/ui)
