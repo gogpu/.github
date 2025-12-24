@@ -31,10 +31,10 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Repository | Description | Status |
 |:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.6.1** |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.7.0** |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.6.0** |
 | **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V/MSL | **v0.5.0** |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, text | **v0.11.0** |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, text | **v0.13.0** |
 | **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
 
 ---
@@ -128,7 +128,7 @@ func main() {
 - [x] **Metal backend (gogpu/wgpu/hal/metal) — ~2.5K LOC, macOS/iOS!**
 
 ### Phase 3 — 2D Graphics ✅
-- [x] 2D graphics library (gogpu/gg) — **v0.11.0 with GPU text rendering!**
+- [x] 2D graphics library (gogpu/gg) — **v0.13.0 with GPU text rendering!**
 - [x] Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback
 - [x] Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff
 - [x] Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes
@@ -138,7 +138,7 @@ func main() {
 - [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
 - [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
 - [x] **GPU Text Pipeline (v0.10.0) — Shaper, Layout, Bidi, 25+ scripts!**
-- [x] **GPU Text Rendering (v0.11.0) — MSDF atlas, emoji, subpixel positioning!**
+- [x] **GPU Text Rendering (v0.13.0) — MSDF atlas, emoji, subpixel positioning!**
 
 ### Phase 3.5 — Platform Expansion ✅
 - [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
