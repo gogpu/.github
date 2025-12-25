@@ -30,13 +30,15 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 ## Projects
 
-| Repository | Description | Status |
-|:-----------|:------------|:------:|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework — GPU abstraction, windowing, input | **v0.7.0** |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU implementation (types, core, HAL) | **v0.6.0** |
-| **[naga](https://github.com/gogpu/naga)** | Pure Go shader compiler — WGSL → SPIR-V/MSL | **v0.5.0** |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics with GPU backend, scene graph, text | **v0.13.0** |
-| **[ui](https://github.com/gogpu/ui)** | GUI widget toolkit | Planned |
+| Repository | Description | Purpose |
+|:-----------|:------------|:--------|
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework | GPU abstraction, windowing, input |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU | Vulkan, Metal, GLES, Software backends |
+| **[naga](https://github.com/gogpu/naga)** | Shader compiler | WGSL → SPIR-V, MSL, GLSL |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics | Canvas API, scene graph, GPU text |
+| **[ui](https://github.com/gogpu/ui)** | GUI toolkit | Widgets, layouts, themes (planned) |
+
+> **Note:** Always use the latest versions. Check each repository for current releases.
 
 ---
 
@@ -99,7 +101,9 @@ func main() {
 
 ---
 
-## Ecosystem
+## Related Projects
+
+Projects from our affiliated organizations:
 
 | Project | Organization | Description |
 |:--------|:-------------|:------------|
