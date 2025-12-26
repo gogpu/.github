@@ -133,7 +133,7 @@ Projects from our affiliated organizations:
 - [x] **Metal backend (gogpu/wgpu/hal/metal) — ~2.5K LOC, macOS/iOS!**
 
 ### Phase 3 — 2D Graphics ✅
-- [x] 2D graphics library (gogpu/gg) — **v0.13.0 with GPU text rendering!**
+- [x] 2D graphics library (gogpu/gg) — **v0.15.0 with GPU compute shaders!**
 - [x] Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback
 - [x] Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff
 - [x] Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes
@@ -143,14 +143,18 @@ Projects from our affiliated organizations:
 - [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
 - [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
 - [x] **GPU Text Pipeline (v0.10.0) — Shaper, Layout, Bidi, 25+ scripts!**
-- [x] **GPU Text Rendering (v0.13.0) — MSDF atlas, emoji, subpixel positioning!**
+- [x] **GPU Text Rendering (v0.11.0) — MSDF atlas, emoji, subpixel positioning!**
+- [x] **Rust-First API (v0.12.0) — Brush, Gradients, Stroke, Dash!**
+- [x] **Go 1.25+ (v0.13.0) — Iterators, Generic Cache, Context!**
+- [x] **Advanced Features (v0.14.0) — Alpha Masks, PathBuilder, io.Closer!**
+- [x] **GPU Compute Shaders (v0.15.0) — vello-style flatten/coarse/fine pipeline!**
 
 ### Phase 3.5 — Platform Expansion ✅
 - [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
 - [x] **Linux X11 (v0.6.0) — Pure Go wire protocol, ~5K LOC!**
 - [x] **macOS Cocoa (v0.5.0) — Pure Go via goffi, ~950 LOC!**
-- [x] **Metal backend (wgpu v0.6.0) — Pure Go via goffi, ~2.5K LOC!**
-- [x] **MSL shader output (naga v0.5.0) — WGSL → Metal Shading Language!**
+- [x] **Metal backend (wgpu v0.7.0) — WGSL→MSL compilation, render pipeline!**
+- [x] **GLSL shader output (naga v0.6.0) — WGSL → OpenGL 3.3+/ES 3.0+!**
 
 ### Phase 4 — GUI
 - [ ] Widget toolkit (gogpu/ui)
