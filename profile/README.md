@@ -16,7 +16,7 @@
 <p align="center">
   <a href="https://github.com/gogpu/gogpu"><img src="https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go" alt="Go Version"></a>
   <a href="https://github.com/gogpu/gogpu/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-  <a href="https://github.com/gogpu/gogpu/stargazers"><img src="https://img.shields.io/github/stars/gogpu/gogpu?style=flat&labelColor=555&color=yellow" alt="Stars"></a>
+  <a href="https://github.com/gogpu"><img src="https://img.shields.io/badge/Pure_Go-224K_LOC-brightgreen?style=flat" alt="224K LOC"></a>
   <a href="https://github.com/gogpu/gogpu/discussions"><img src="https://img.shields.io/github/discussions/gogpu/gogpu?style=flat&labelColor=555&color=blue" alt="Discussions"></a>
 </p>
 
@@ -28,17 +28,17 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 ---
 
-## Projects
+## Ecosystem
 
-| Repository | Description | Purpose |
-|:-----------|:------------|:--------|
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework | GPU abstraction, windowing, input |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU | Vulkan, Metal, GLES, Software backends |
-| **[naga](https://github.com/gogpu/naga)** | Shader compiler | WGSL → SPIR-V, MSL, GLSL |
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics | Canvas API, scene graph, GPU text |
-| **[ui](https://github.com/gogpu/ui)** | GUI toolkit | Widgets, layouts, themes (planned) |
+| Library | Purpose | LOC | Stars |
+|:--------|:--------|----:|:-----:|
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics, Canvas API, GPU compute | ~104K | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg) |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU (Vulkan/Metal/GLES) | ~71K | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu) |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | ~26K | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) |
+| **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL compiler | ~23K | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga) |
+| **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planned)* | — | — |
 
-> **Note:** Always use the latest versions. Check each repository for current releases.
+**Total: ~224K LOC Pure Go** | Zero CGO | Cross-platform
 
 ---
 
@@ -103,13 +103,11 @@ func main() {
 
 ## Related Projects
 
-Projects from our affiliated organizations:
-
-| Project | Organization | Description |
-|:--------|:-------------|:------------|
-| [webgpu](https://github.com/go-webgpu/webgpu) | go-webgpu | Zero-CGO WebGPU bindings |
-| [goffi](https://github.com/go-webgpu/goffi) | go-webgpu | Pure Go FFI library |
-| [born](https://github.com/born-ml/born) | born-ml | Pure Go ML framework |
+| Project | Organization | Purpose | Stars |
+|:--------|:-------------|:--------|:-----:|
+| **[webgpu](https://github.com/go-webgpu/webgpu)** | go-webgpu | Zero-CGO WebGPU bindings (wgpu-native FFI) | [![](https://img.shields.io/github/stars/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu) |
+| **[goffi](https://github.com/go-webgpu/goffi)** | go-webgpu | Pure Go FFI library (88-114ns overhead) | [![](https://img.shields.io/github/stars/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi) |
+| **[born](https://github.com/born-ml/born)** | born-ml | Pure Go ML framework (97%+ MNIST) | [![](https://img.shields.io/github/stars/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born) |
 
 ---
 
