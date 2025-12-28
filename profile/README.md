@@ -123,12 +123,12 @@ func main() {
 
 ### Platforms
 
-| Platform | Window | Vulkan | Metal | GLES |
-|:---------|:------:|:------:|:-----:|:----:|
-| Windows | ✅ | ✅ | — | ✅ |
-| macOS | ✅ | — | ✅ | — |
-| Linux (X11) | ✅ | ✅ | — | ✅ |
-| Linux (Wayland) | ✅ | ✅ | — | ✅ |
+| Platform | Vulkan | Metal | GLES | Software |
+|:---------|:------:|:-----:|:----:|:--------:|
+| Windows | ✅ | — | ✅ | ✅ |
+| macOS | — | ✅ | — | ✅ |
+| Linux (X11) | ✅ | — | ✅ | ✅ |
+| Linux (Wayland) | ✅ | — | ✅ | ✅ |
 
 See individual project ROADMAP.md files for detailed roadmaps.
 
