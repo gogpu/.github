@@ -16,7 +16,7 @@
 <p align="center">
   <a href="https://github.com/gogpu/gogpu"><img src="https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go" alt="Go Version"></a>
   <a href="https://github.com/gogpu/gogpu/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-  <a href="https://github.com/gogpu"><img src="https://img.shields.io/badge/Pure_Go-249K_LOC-brightgreen?style=flat" alt="249K LOC"></a>
+  <a href="https://github.com/gogpu"><img src="https://img.shields.io/badge/Pure_Go-Zero_CGO-brightgreen?style=flat" alt="Pure Go"></a>
   <a href="https://github.com/gogpu/gogpu/discussions"><img src="https://img.shields.io/github/discussions/gogpu/gogpu?style=flat&labelColor=555&color=blue" alt="Discussions"></a>
 </p>
 
@@ -30,15 +30,15 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 ## Ecosystem
 
-| Library | Purpose | LOC | Stars | Issues |
-|:--------|:--------|----:|:-----:|:------:|
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics, Canvas API, GPU compute | ~104K | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) |
-| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU (Vulkan/Metal/GLES/DX12) | ~87K | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) |
-| **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL compiler | ~32K | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) |
-| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | ~26K | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) |
-| **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planning)* | — | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) |
+| Library | Purpose | Stars | Issues | PRs |
+|:--------|:--------|:-----:|:------:|:---:|
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics, Canvas API, GPU compute | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/pulls) |
+| **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU (Vulkan/Metal/GLES/DX12) | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/pulls) |
+| **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL compiler | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
+| **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
+| **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planning)* | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
-**Total: ~249K LOC Pure Go** | Zero CGO | Cross-platform
+**Pure Go** | Zero CGO | Cross-platform
 
 ---
 
@@ -111,54 +111,26 @@ func main() {
 
 ---
 
-## Roadmap
+## Status
 
-### Foundation ✅
-- [x] Zero-CGO WebGPU bindings (go-webgpu/webgpu)
-- [x] Pure Go FFI (go-webgpu/goffi)
+| Component | Status | Description |
+|:----------|:------:|:------------|
+| **wgpu** | ✅ Stable | Vulkan, Metal, GLES, Software backends |
+| **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL outputs |
+| **gg** | ✅ Stable | 2D graphics with GPU compute |
+| **gogpu** | ✅ Stable | Graphics framework, windowing |
+| **ui** | 🚧 Planning | GUI widget toolkit |
 
-### Phase 1 — Graphics ✅
-- [x] Graphics framework (gogpu/gogpu) — Triangle, Textures, Dual Backend
-- [x] Shader compiler (gogpu/naga) — **WGSL → SPIR-V/MSL/GLSL/HLSL, all 4 backends stable (~32K LOC)**
+### Platforms
 
-### Phase 2 — Pure Go WebGPU ✅
-- [x] WebGPU types package (gogpu/wgpu/types)
-- [x] Core validation & state (gogpu/wgpu/core)
-- [x] HAL abstraction layer (gogpu/wgpu/hal)
-- [x] OpenGL ES backend (gogpu/wgpu/hal/gles) — ~7.5K LOC, Windows + Linux
-- [x] **Vulkan backend (gogpu/wgpu/hal/vulkan) — ~27K LOC, cross-platform!**
-- [x] **Software backend (gogpu/wgpu/hal/software) — ~10K LOC, full rasterizer!**
-- [x] **Metal backend (gogpu/wgpu/hal/metal) — ~2.5K LOC, macOS/iOS!**
+| Platform | Window | Vulkan | Metal | GLES |
+|:---------|:------:|:------:|:-----:|:----:|
+| Windows | ✅ | ✅ | — | ✅ |
+| macOS | ✅ | — | ✅ | — |
+| Linux (X11) | ✅ | ✅ | — | ✅ |
+| Linux (Wayland) | ✅ | ✅ | — | ✅ |
 
-### Phase 3 — 2D Graphics ✅
-- [x] 2D graphics library (gogpu/gg) — **v0.15.0 with GPU compute shaders!**
-- [x] Text rendering (v0.2.0) — FontSource/Face, MultiFace fallback
-- [x] Images, Clipping, Compositing (v0.3.0) — DrawImage, Clip API, Porter-Duff
-- [x] Layer API, Color Pipeline (v0.4.0) — PushLayer/PopLayer, HSL blend modes
-- [x] SIMD Optimization (v0.5.0) — Fast div255, sRGB LUTs, batch blending (260x faster)
-- [x] **Parallel Rendering (v0.6.0) — TileGrid, WorkerPool, lock-free DirtyRegion!**
-- [x] **Scene Graph (v0.7.0) — Retained mode, 13 shapes, filters, layer cache!**
-- [x] **Backend Abstraction (v0.8.0) — RenderBackend interface, registry!**
-- [x] **GPU Backend (v0.9.0) — Sparse Strips, WGSL shaders, 29 blend modes on GPU!**
-- [x] **GPU Text Pipeline (v0.10.0) — Shaper, Layout, Bidi, 25+ scripts!**
-- [x] **GPU Text Rendering (v0.11.0) — MSDF atlas, emoji, subpixel positioning!**
-- [x] **Rust-First API (v0.12.0) — Brush, Gradients, Stroke, Dash!**
-- [x] **Go 1.25+ (v0.13.0) — Iterators, Generic Cache, Context!**
-- [x] **Advanced Features (v0.14.0) — Alpha Masks, PathBuilder, io.Closer!**
-- [x] **GPU Compute Shaders (v0.15.0) — vello-style flatten/coarse/fine pipeline!**
-
-### Phase 3.5 — Platform Expansion ✅
-- [x] **Linux Wayland (v0.4.0) — Pure Go implementation, 5,700 LOC!**
-- [x] **Linux X11 (v0.6.0) — Pure Go wire protocol, ~5K LOC!**
-- [x] **macOS Cocoa (v0.5.0) — Pure Go via goffi, ~950 LOC!**
-- [x] **Metal backend (wgpu v0.7.0) — WGSL→MSL compilation, render pipeline!**
-- [x] **GLSL shader output (naga v0.6.0) — WGSL → OpenGL 3.3+/ES 3.0+!**
-- [x] **HLSL shader output (naga v0.7.0) — WGSL → DirectX 11/12!**
-- [x] **naga v0.8.0 — All backends stable, LTS mode!**
-
-### Phase 4 — GUI
-- [ ] Widget toolkit (gogpu/ui)
-- [ ] Layouts, styling, themes
+See individual project ROADMAP.md files for detailed roadmaps.
 
 ---
 
