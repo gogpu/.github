@@ -79,35 +79,35 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 ```go
 package main
 
-import "github.com/gogpu/gogpu"
+import (
+    "github.com/gogpu/gogpu"
+    "github.com/gogpu/gogpu/gmath"
+)
 
 func main() {
-    app := gogpu.NewApp(gogpu.Config{
-        Title:  "Hello GoGPU",
-        Width:  800,
-        Height: 600,
-    })
+    app := gogpu.NewApp(gogpu.DefaultConfig().
+        WithTitle("Hello GoGPU").
+        WithSize(800, 600))
 
-    app.OnDraw(func(ctx *gogpu.Context) {
-        ctx.Clear(gogpu.Black)
-        ctx.DrawTriangle(/* ... */)
+    app.OnDraw(func(dc *gogpu.Context) {
+        dc.DrawTriangleColor(gmath.DarkGray)
     })
 
     app.Run()
 }
 ```
 
-> **Note:** API is in active development and will change.
+**Result:** A window with a rendered triangle in ~20 lines of code.
 
 ---
 
 ## Related Projects
 
-| Project | Organization | Purpose | Stars | Issues |
-|:--------|:-------------|:--------|:-----:|:------:|
-| **[webgpu](https://github.com/go-webgpu/webgpu)** | go-webgpu | Zero-CGO WebGPU bindings (wgpu-native FFI) | [![](https://img.shields.io/github/stars/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu) | [![](https://img.shields.io/github/issues/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu/issues) |
-| **[goffi](https://github.com/go-webgpu/goffi)** | go-webgpu | Pure Go FFI library (88-114ns overhead) | [![](https://img.shields.io/github/stars/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi) | [![](https://img.shields.io/github/issues/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi/issues) |
-| **[born](https://github.com/born-ml/born)** | born-ml | Pure Go ML framework (97%+ MNIST) | [![](https://img.shields.io/github/stars/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born) | [![](https://img.shields.io/github/issues/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born/issues) |
+| Project | Organization | Purpose | Version | Stars | Issues |
+|:--------|:-------------|:--------|:-------:|:-----:|:------:|
+| **[webgpu](https://github.com/go-webgpu/webgpu)** | go-webgpu | Zero-CGO WebGPU bindings (wgpu-native FFI) | [![](https://img.shields.io/github/v/release/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu/releases) | [![](https://img.shields.io/github/stars/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu) | [![](https://img.shields.io/github/issues/go-webgpu/webgpu?style=flat-square&label=)](https://github.com/go-webgpu/webgpu/issues) |
+| **[goffi](https://github.com/go-webgpu/goffi)** | go-webgpu | Pure Go FFI library (88-114ns overhead) | [![](https://img.shields.io/github/v/release/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi/releases) | [![](https://img.shields.io/github/stars/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi) | [![](https://img.shields.io/github/issues/go-webgpu/goffi?style=flat-square&label=)](https://github.com/go-webgpu/goffi/issues) |
+| **[born](https://github.com/born-ml/born)** | born-ml | Pure Go ML framework (97%+ MNIST) | [![](https://img.shields.io/github/v/release/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born/releases) | [![](https://img.shields.io/github/stars/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born) | [![](https://img.shields.io/github/issues/born-ml/born?style=flat-square&label=)](https://github.com/born-ml/born/issues) |
 
 ---
 
