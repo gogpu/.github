@@ -36,6 +36,8 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU (Vulkan/Metal/GLES/DX12) | [![](https://img.shields.io/github/v/release/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/releases) | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/pulls) |
 | **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL compiler | [![](https://img.shields.io/github/v/release/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/releases) | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
+| **[gpucontext](https://github.com/gogpu/gpucontext)** | Shared interfaces (DeviceProvider, EventSource) | [![](https://img.shields.io/github/v/release/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/releases) | [![](https://img.shields.io/github/stars/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext) | [![](https://img.shields.io/github/issues/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/pulls) |
+| **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types *(planned)* | — | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
 | **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planning)* | — | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
@@ -54,6 +56,9 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gogpu (Graphics Framework)               │
 │         GPU abstraction, windowing, input, math             │
+├─────────────────────────────────────────────────────────────┤
+│   gogpu/gpucontext (Shared Interfaces)   gogpu/gputypes     │
+│     DeviceProvider, EventSource, Registry    (planned)      │
 ├─────────────────────────────────────────────────────────────┤
 │   go-webgpu/webgpu (FFI)    →    gogpu/wgpu (Pure Go)       │
 ├─────────────────────────────────────────────────────────────┤
@@ -119,6 +124,8 @@ func main() {
 | **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL outputs |
 | **gg** | ✅ Stable | 2D graphics with GPU compute |
 | **gogpu** | ✅ Stable | Graphics framework, windowing |
+| **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
+| **gputypes** | 📋 Planned | WebGPU type definitions |
 | **ui** | 🚧 Planning | GUI widget toolkit |
 
 ### Platforms
