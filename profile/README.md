@@ -37,7 +37,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL compiler | [![](https://img.shields.io/github/v/release/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/releases) | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
 | **[gpucontext](https://github.com/gogpu/gpucontext)** | Shared interfaces (DeviceProvider, EventSource) | [![](https://img.shields.io/github/v/release/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/releases) | [![](https://img.shields.io/github/stars/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext) | [![](https://img.shields.io/github/issues/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/pulls) |
-| **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types *(planned)* | — | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
+| **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types (webgpu.h spec compliant) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
 | **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planning)* | — | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
@@ -52,13 +52,16 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 ├─────────────────────────────────────────────────────────────┤
 │   gogpu/ui (GUI)   │   born-ml/born   │   Your Framework    │
 ├─────────────────────────────────────────────────────────────┤
-│              gogpu/gg (2D Graphics)                         │
+│              gogpu/gg (2D Graphics + ggcanvas)              │
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gogpu (Graphics Framework)               │
 │         GPU abstraction, windowing, input, math             │
 ├─────────────────────────────────────────────────────────────┤
-│   gogpu/gpucontext (Shared Interfaces)   gogpu/gputypes     │
-│     DeviceProvider, EventSource, Registry    (planned)      │
+│    gogpu/gpucontext (Shared Interfaces)                     │
+│       DeviceProvider, EventSource, Registry                 │
+├─────────────────────────────────────────────────────────────┤
+│    gogpu/gputypes (WebGPU Types, webgpu.h compliant)        │
+│       TextureFormat, BufferUsage, PresentMode, etc.         │
 ├─────────────────────────────────────────────────────────────┤
 │   go-webgpu/webgpu (FFI)    →    gogpu/wgpu (Pure Go)       │
 ├─────────────────────────────────────────────────────────────┤
@@ -76,6 +79,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **WebGPU API** | Modern, portable GPU abstraction |
 | **Layered Design** | Use only what you need |
 | **Pure Go Goal** | Gradually replacing FFI with native Go |
+| **webgpu.h Compliant** | Binary-compatible with wgpu-native |
 
 ---
 
@@ -106,6 +110,26 @@ func main() {
 
 ---
 
+## gg + gogpu Integration
+
+Use 2D graphics from **gg** directly in **gogpu** windows:
+
+```go
+import "github.com/gogpu/gg/integration/ggcanvas"
+
+canvas, _ := ggcanvas.New(app.GPUContextProvider(), 800, 600)
+defer canvas.Close()
+
+ctx := canvas.Context()
+ctx.SetRGB(1, 0, 0)
+ctx.DrawCircle(400, 300, 100)
+ctx.Fill()
+
+canvas.RenderTo(dc) // Draw to gogpu window
+```
+
+---
+
 ## Related Projects
 
 | Project | Organization | Purpose | Version | Stars | Issues | PRs |
@@ -120,12 +144,12 @@ func main() {
 
 | Component | Status | Description |
 |:----------|:------:|:------------|
+| **gputypes** | ✅ Stable | WebGPU types (webgpu.h spec compliant) |
+| **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
 | **wgpu** | ✅ Stable | Vulkan, Metal, GLES, Software backends |
 | **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL outputs |
-| **gg** | ✅ Stable | 2D graphics with GPU compute |
+| **gg** | ✅ Stable | 2D graphics + ggcanvas integration |
 | **gogpu** | ✅ Stable | Graphics framework, windowing |
-| **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
-| **gputypes** | 📋 Planned | WebGPU type definitions |
 | **ui** | 🚧 Planning | GUI widget toolkit |
 
 ### Platforms
