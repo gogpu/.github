@@ -38,6 +38,8 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
 | **[gpucontext](https://github.com/gogpu/gpucontext)** | Shared interfaces (DeviceProvider, EventSource) | [![](https://img.shields.io/github/v/release/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/releases) | [![](https://img.shields.io/github/stars/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext) | [![](https://img.shields.io/github/issues/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/pulls) |
 | **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types (webgpu.h spec compliant) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
+| **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
+| **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
 | **[ui](https://github.com/gogpu/ui)** | GUI toolkit *(planning)* | — | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
@@ -52,7 +54,9 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 ├─────────────────────────────────────────────────────────────┤
 │   gogpu/ui (GUI)   │   born-ml/born   │   Your Framework    │
 ├─────────────────────────────────────────────────────────────┤
-│              gogpu/gg (2D Graphics + ggcanvas)              │
+│              gogpu/gg (2D Graphics + Recording)             │
+│                 ↓ export to ↓                               │
+│           gg-pdf (PDF)    gg-svg (SVG)                      │
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gogpu (Graphics Framework)               │
 │         GPU abstraction, windowing, input, math             │
@@ -148,7 +152,9 @@ canvas.RenderTo(dc) // Draw to gogpu window
 | **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
 | **wgpu** | ✅ Stable | Vulkan, Metal, GLES, Software backends |
 | **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL outputs |
-| **gg** | ✅ Stable | 2D graphics + ggcanvas integration |
+| **gg** | ✅ Stable | 2D graphics + recording + ggcanvas |
+| **gg-pdf** | ✅ Stable | PDF export backend for gg |
+| **gg-svg** | ✅ Stable | SVG export backend for gg |
 | **gogpu** | ✅ Stable | Graphics framework, windowing |
 | **ui** | 🚧 Planning | GUI widget toolkit |
 
