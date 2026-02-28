@@ -32,7 +32,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 
 | Library | Purpose | Version | Stars | Issues | PRs |
 |:--------|:--------|:-------:|:-----:|:------:|:---:|
-| **[gg](https://github.com/gogpu/gg)** | 2D graphics, GPU acceleration, text rendering | [![](https://img.shields.io/github/v/release/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/pulls) |
+| **[gg](https://github.com/gogpu/gg)** | 2D graphics, 5-engine smart rasterizer, GPU acceleration | [![](https://img.shields.io/github/v/release/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/pulls) |
 | **[wgpu](https://github.com/gogpu/wgpu)** | Pure Go WebGPU (Vulkan/Metal/GLES/DX12) | [![](https://img.shields.io/github/v/release/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/releases) | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/pulls) |
 | **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL compiler | [![](https://img.shields.io/github/v/release/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/releases) | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/stargazers) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
 | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
@@ -40,7 +40,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types (webgpu.h spec compliant) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
 | **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
 | **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
-| **[ui](https://github.com/gogpu/ui)** | GUI toolkit (Phase 2 Beta, 55K LOC) | [![](https://img.shields.io/badge/Phase_2-Beta-blue?style=flat-square)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
+| **[ui](https://github.com/gogpu/ui)** | GUI toolkit (Phase 2 Beta, 61K LOC) | [![](https://img.shields.io/badge/Phase_2-Beta-blue?style=flat-square)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
 
@@ -55,6 +55,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │   gogpu/ui (GUI)   │   born-ml/born   │   Your Framework    │
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gg (2D Graphics + Recording)             │
+│   Smart Rasterizer: Scanline│4×4 Tiles│16×16│SDF│Compute    │
 │                 ↓ export to ↓                               │
 │           gg-pdf (PDF)    gg-svg (SVG)                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -67,7 +68,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │    gogpu/gputypes (WebGPU Types, webgpu.h compliant)        │
 │       TextureFormat, BufferUsage, PresentMode, etc.         │
 ├─────────────────────────────────────────────────────────────┤
-│   go-webgpu/webgpu (FFI)    →    gogpu/wgpu (Pure Go)       │
+│   go-webgpu/webgpu (FFI)  ←or→  gogpu/wgpu (Pure Go)       │
 ├─────────────────────────────────────────────────────────────┤
 │              Vulkan  │  Metal  │  DX12  │  OpenGL           │
 └─────────────────────────────────────────────────────────────┘
@@ -81,8 +82,9 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 |:--------|:------------|
 | **Zero CGO** | No C compiler required, simple `go build` |
 | **WebGPU API** | Modern, portable GPU abstraction |
+| **Smart Rasterizer** | 5 algorithms with per-path auto-selection (scanline, 4×4 tiles, 16×16 tiles, SDF, compute) |
+| **Dual Backend** | Pure Go (default) or Rust FFI (`-tags rust`) — same API, transparent choice |
 | **Layered Design** | Use only what you need |
-| **Pure Go Goal** | Gradually replacing FFI with native Go |
 | **webgpu.h Compliant** | Binary-compatible with wgpu-native |
 
 ---
@@ -116,7 +118,7 @@ func main() {
 
 ## gg + gogpu Integration
 
-Use 2D graphics from **gg** directly in **gogpu** windows — with GPU-direct rendering (zero CPU readback):
+Use 2D graphics from **gg** directly in **gogpu** windows — with smart rasterizer auto-selection and GPU-direct rendering (zero CPU readback):
 
 ```go
 import (
@@ -161,11 +163,11 @@ app.OnDraw(func(dc *gogpu.Context) {
 | **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
 | **wgpu** | ✅ Stable | Vulkan, Metal, GLES, Software backends |
 | **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL outputs |
-| **gg** | ✅ Stable | 2D graphics + recording + ggcanvas |
+| **gg** | ✅ Stable | 2D graphics, 5-engine rasterizer, recording, ggcanvas |
 | **gg-pdf** | ✅ Stable | PDF export backend for gg |
 | **gg-svg** | ✅ Stable | SVG export backend for gg |
 | **gogpu** | ✅ Stable | Graphics framework, windowing |
-| **ui** | 🔄 Phase 2 Beta | GUI widget toolkit (buttons, checkbox, radio, Material 3, 55K LOC) |
+| **ui** | 🔄 Phase 2 Beta | GUI widget toolkit (buttons, checkbox, radio, Material 3, 61K LOC) |
 
 ### Platforms
 
