@@ -68,7 +68,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │    gogpu/gputypes (WebGPU Types, webgpu.h compliant)        │
 │       TextureFormat, BufferUsage, PresentMode, etc.         │
 ├─────────────────────────────────────────────────────────────┤
-│   go-webgpu/webgpu (FFI)  ←or→  gogpu/wgpu (Pure Go)       │
+│   go-webgpu/webgpu (FFI)  ←or→  gogpu/wgpu (Pure Go)        │
 ├─────────────────────────────────────────────────────────────┤
 │              Vulkan  │  Metal  │  DX12  │  OpenGL           │
 └─────────────────────────────────────────────────────────────┘
