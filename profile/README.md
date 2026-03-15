@@ -40,7 +40,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types (webgpu.h spec compliant) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
 | **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
 | **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
-| **[ui](https://github.com/gogpu/ui)** | GUI toolkit (Phase 2 Beta, 61K LOC) | [![](https://img.shields.io/badge/Phase_2-Beta-blue?style=flat-square)](https://github.com/gogpu/ui) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
+| **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (26 widgets, M3/Fluent/Cupertino) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
 
@@ -167,7 +167,7 @@ app.OnDraw(func(dc *gogpu.Context) {
 | **gg-pdf** | ✅ Stable | PDF export backend for gg |
 | **gg-svg** | ✅ Stable | SVG export backend for gg |
 | **gogpu** | ✅ Stable | Graphics framework, windowing |
-| **ui** | 🔄 Phase 2 Beta | GUI widget toolkit (buttons, checkbox, radio, Material 3, 61K LOC) |
+| **ui** | ✅ v0.1.0 | Enterprise GUI toolkit — 26 widgets, Material 3 / Fluent / Cupertino themes |
 
 ### Platforms
 
