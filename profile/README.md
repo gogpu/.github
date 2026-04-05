@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>Pure Go GPU Computing Ecosystem</strong><br>
-  580K+ lines of Pure Go. GPU power, Go simplicity. Zero CGO.
+  632K+ lines of Pure Go. GPU power, Go simplicity. Zero CGO.
 </p>
 
 <p align="center">
@@ -41,6 +41,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
 | **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
 | **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (22 widgets, M3/Fluent/Cupertino, ~146K LOC) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
+| **[systray](https://github.com/gogpu/systray)** | Pure Go system tray (Win32/macOS/Linux, zero CGO) | [![](https://img.shields.io/github/v/release/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/releases) | [![](https://img.shields.io/github/stars/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/stargazers) | [![](https://img.shields.io/github/issues/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
 
