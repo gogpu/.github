@@ -65,7 +65,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gogpu (Graphics Framework)               │
 │         GPU abstraction, windowing, input, math             │
-│     gogpu/systray (System Tray)   gogpu/audio (Audio)      │
+│     gogpu/systray (System Tray)   gogpu/audio (Audio)       │
 ├─────────────────────────────────────────────────────────────┤
 │    gogpu/gpucontext (Shared Interfaces)                     │
 │       DeviceProvider, EventSource, Registry                 │
@@ -78,7 +78,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │                   gogpu/naga (Shader Compiler)              │
 │       (WGSL → SPIR-V/MSL/GLSL/HLSL/DXIL)                    │
 ├─────────────────────────────────────────────────────────────┤
-│              Vulkan  │  Metal  │  DX12  │  OpenGL           │
+│        Vulkan │ Metal │ DX12 │ OpenGL │ Software            │
 └─────────────────────────────────────────────────────────────┘
 ```
 
