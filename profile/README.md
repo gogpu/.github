@@ -212,6 +212,10 @@ All projects are licensed under the **MIT License**.
 ---
 
 <p align="center">
+  <img src="https://raw.githubusercontent.com/gogpu/.github/main/assets/go-love-gpu.png" alt="GO ❤ GPU" width="280" />
+</p>
+
+<p align="center">
   <sub>Building the GPU computing ecosystem Go deserves</sub><br>
   <a href="https://github.com/gogpu">github.com/gogpu</a>
 </p>
