@@ -44,6 +44,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **[g3d](https://github.com/gogpu/g3d)** | Pure Go 3D rendering (scene graph, PBR, GLTF)                        | [![](https://img.shields.io/badge/-planned-blue?style=flat-square)](https://github.com/gogpu/g3d) | [![](https://img.shields.io/github/stars/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/stargazers) | [![](https://img.shields.io/github/issues/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/pulls) |
 | **[systray](https://github.com/gogpu/systray)** | Pure Go system tray (Win32/macOS/Linux, zero CGO, ~6.2K LOC)         | [![](https://img.shields.io/github/v/release/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/releases) | [![](https://img.shields.io/github/stars/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/stargazers) | [![](https://img.shields.io/github/issues/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/pulls) |
 | **[audio](https://github.com/gogpu/audio)** | Pure Go audio engine (WASAPI/CoreAudio/PulseAudio, zero CGO)         | [![](https://img.shields.io/badge/-planned-blue?style=flat-square)](https://github.com/gogpu/audio) | [![](https://img.shields.io/github/stars/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/stargazers) | [![](https://img.shields.io/github/issues/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/pulls) |
+| **[compose](https://github.com/gogpu/compose)** | Multi-process composition (offscreen render + compositor, zero CGO)   | [![](https://img.shields.io/badge/-planned-blue?style=flat-square)](https://github.com/gogpu/compose) | [![](https://img.shields.io/github/stars/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/stargazers) | [![](https://img.shields.io/github/issues/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
 
@@ -177,6 +178,7 @@ app.OnDraw(func(dc *gogpu.Context) {
 | **ui** | ✅ v0.1.1 | Enterprise GUI toolkit — 22 widgets, Material 3 / Fluent / Cupertino themes, ~167K LOC |
 | **systray** | ✅ v0.1.0 | System tray — Win32/macOS/Linux, dark mode, notifications, 72 tests |
 | **audio** | 🚧 Planned | Pure Go audio engine — WASAPI, CoreAudio, PulseAudio |
+| **compose** | 🚧 Planned | Multi-process composition — offscreen render + compositor |
 
 ### Platforms
 
