@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>Pure Go GPU Computing Ecosystem</strong><br>
-  800K+ lines of code. GPU power, Go simplicity. Zero CGO.
+  1.1M+ lines of code. GPU power, Go simplicity. Zero CGO.
 </p>
 
 <p align="center">
