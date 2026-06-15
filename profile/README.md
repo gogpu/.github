@@ -18,6 +18,7 @@
   <a href="https://github.com/gogpu/gogpu/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
   <a href="https://github.com/gogpu"><img src="https://img.shields.io/badge/Pure_Go-Zero_CGO-brightgreen?style=flat" alt="Pure Go"></a>
   <a href="https://github.com/gogpu/gogpu/discussions"><img src="https://img.shields.io/github/discussions/gogpu/gogpu?style=flat&labelColor=555&color=blue" alt="Discussions"></a>
+  <a href="https://opencollective.com/gogpu"><img src="https://img.shields.io/opencollective/all/gogpu?style=flat&label=sponsors&color=brightgreen" alt="Open Collective"></a>
 </p>
 
 ---
@@ -194,6 +195,22 @@ app.OnDraw(func(dc *gogpu.Context) {
 | **Browser/WASM** | — | — | — | — | — | — | ✅ |
 
 See individual project ROADMAP.md files for detailed roadmaps.
+
+---
+
+## Support
+
+GoGPU is free and open source. If you find it useful, please consider supporting continued development:
+
+<a href="https://opencollective.com/gogpu/donate"><img src="https://opencollective.com/gogpu/donate/button@2x.png?color=blue" width="200" /></a>
+
+### Backers
+
+<a href="https://opencollective.com/gogpu#backer"><img src="https://opencollective.com/gogpu/backers.svg?avatarHeight=36&width=600" /></a>
+
+### Sponsors
+
+<a href="https://opencollective.com/gogpu#sponsor"><img src="https://opencollective.com/gogpu/sponsors.svg?avatarHeight=60&width=600" /></a>
 
 ---
 
