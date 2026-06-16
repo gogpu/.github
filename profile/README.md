@@ -202,6 +202,8 @@ See individual project ROADMAP.md files for detailed roadmaps.
 
 GoGPU is free and open source. If you find it useful, please consider supporting continued development:
 
+🥇 **First Sponsor:** [Inkflow](https://opencollective.com/inkflow) — thank you for believing in the project from the start!
+
 <a href="https://opencollective.com/gogpu/donate"><img src="https://opencollective.com/gogpu/donate/button@2x.png?color=blue" width="200" /></a>
 
 ### Backers
