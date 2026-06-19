@@ -25,7 +25,7 @@
 
 ## Why GoGPU?
 
-**GoGPU is to Go what Flutter is to Dart and Qt is to C++** — a complete GPU computing ecosystem, not just a single library. From shader compilation and GPU abstraction to 2D/3D rendering, GUI toolkit with themed widgets, and platform integration — all in **Pure Go with zero CGO**.
+**GoGPU is to Go what Flutter is to Dart, Qt is to C++, and JavaFX is to Java** — a professional, complete GPU computing ecosystem, not just a single library. From shader compilation and GPU abstraction to 2D/3D rendering, GUI toolkit with themed widgets, and platform integration — all in **Pure Go with zero CGO**.
 
 Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/comments/1pdw9i7/go_deserves_more_support_in_gui_development/). Go waited 17 years for a professional graphics ecosystem. We're building it.
 
