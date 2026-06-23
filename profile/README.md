@@ -133,26 +133,45 @@ func main() {
 Use 2D graphics from **gg** directly in **gogpu** windows — with smart rasterizer auto-selection and GPU-direct rendering (zero CPU readback):
 
 ```go
+package main
+
 import (
+    "log"
+
     "github.com/gogpu/gg"
+    _ "github.com/gogpu/gg/gpu" // Register GPU accelerator
     "github.com/gogpu/gg/integration/ggcanvas"
+    "github.com/gogpu/gogpu"
 )
 
-canvas, _ := ggcanvas.New(app.GPUContextProvider(), 800, 600)
+func main() {
+    app := gogpu.NewApp(gogpu.DefaultConfig().
+        WithTitle("gg + gogpu").
+        WithSize(800, 600))
 
-app.OnDraw(func(dc *gogpu.Context) {
-    sv := dc.SurfaceView()
-    sw, sh := dc.SurfaceSize()
-    gg.SetAcceleratorSurfaceTarget(sv, sw, sh)
+    var canvas *ggcanvas.Canvas
 
-    canvas.Draw(func(cc *gg.Context) {
-        cc.SetRGB(1, 0, 0)
-        cc.DrawCircle(400, 300, 100)
-        cc.Fill()
+    app.OnDraw(func(dc *gogpu.Context) {
+        w, h := dc.Width(), dc.Height()
+        if canvas == nil {
+            var err error
+            canvas, err = ggcanvas.New(app.GPUContextProvider(), w, h)
+            if err != nil {
+                log.Fatal(err)
+            }
+        }
+
+        canvas.Draw(func(cc *gg.Context) {
+            cc.SetRGB(1, 0, 0)
+            cc.DrawCircle(400, 300, 100)
+            cc.Fill()
+        })
+
+        canvas.Render(dc.RenderTarget()) // GPU-direct, zero-copy
     })
 
-    canvas.RenderDirect(sv, sw, sh) // GPU-direct, zero-copy
-})
+    app.Run()
+}
 ```
 
 ---
