@@ -192,6 +192,27 @@ func main() {
 
 ---
 
+## Tutorials & Articles
+
+We haven't had time to write comprehensive tutorials yet — we've been focused on building the ecosystem itself. But the community has started filling that gap:
+
+### Community Tutorials
+
+🇨🇿 **Pavel Tišnovský** ([root.cz](https://www.root.cz) — Czech Republic's leading tech portal) wrote two in-depth tutorials covering the `gg` 2D graphics library with 54 working [examples](https://github.com/tisnik/go-root):
+
+1. [Creating 2D/3D Graphics and Animations in Go with GoGPU](https://www.root.cz/clanky/tvorba-2d-i-3d-grafiky-a-animaci-v-go-s-vyuzitim-projektu-gogpu/) — 49 min read. Paths, Bézier curves, transforms, text, animations.
+2. [GoGPU Part 2: Gradients, SVG & PDF Export](https://www.root.cz/clanky/tvorba-2d-i-3d-grafiky-a-animaci-v-go-s-vyuzitim-projektu-gogpu-2-cast/) — 39 min read. Gradients, vector export, GUI integration.
+
+> Articles are in Czech — use [Google Translate](https://translate.google.com/) for other languages. The code examples are universal.
+
+### Our Articles
+
+- [GoGPU: From Idea to 100K Lines](https://dev.to/kolkov/gogpu-from-idea-to-100k-lines-in-two-weeks-building-gos-gpu-ecosystem-3b2) — Dev.to
+- [GoGPU Announcement](https://dev.to/kolkov/gogpu-a-pure-go-graphics-library-for-gpu-programming-2j5d) — Dev.to
+- [First Pure Go DXIL Generator](https://dev.to/kolkov/we-built-the-first-pure-go-dxil-generator-because-optimizing-the-wrong-path-wasnt-enough-35en) — Dev.to
+
+---
+
 ## Status
 
 | Layer | Component | Status | Description |
