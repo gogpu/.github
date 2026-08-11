@@ -75,11 +75,11 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │           gg-pdf (PDF)    gg-svg (SVG)                      │
 ├─────────────────────────────────────────────────────────────┤
 │              gogpu/gogpu (Graphics Framework)               │
-│         GPU abstraction, windowing, input, math             │
+│    Windowing, compositor (ADR-067), damage overlay, input   │
 │     gogpu/systray (System Tray)   gogpu/audio (Audio)       │
 ├─────────────────────────────────────────────────────────────┤
 │    gogpu/gpucontext (Shared Interfaces)                     │
-│       DeviceProvider, EventSource, Registry                 │
+│ DeviceProvider, SurfaceCompositor, DamageSource, EventSource│
 ├─────────────────────────────────────────────────────────────┤
 │    gogpu/gputypes (WebGPU Types, webgpu.h compliant)        │
 │       TextureFormat, BufferUsage, PresentMode, etc.         │
@@ -219,21 +219,21 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 
 | Layer | Component | Status | Description |
 |:------|:----------|:------:|:------------|
-| Foundation | **gputypes** | ✅ Stable | WebGPU types (webgpu.h spec compliant) |
-| Foundation | **naga** | ✅ Stable | SPIR-V, MSL, GLSL, HLSL + DXIL (experimental) outputs |
-| GPU Core | **wgpu** | ✅ Stable | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM |
+| Foundation | **gputypes** | ✅ v0.5.1 | WebGPU types (webgpu.h spec compliant) |
+| Foundation | **naga** | ✅ v0.18.0 | SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~324K LOC |
+| GPU Core | **wgpu** | ✅ v0.31.0 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~254K LOC |
 | GPU Core | **galloc** | ✅ v0.1.0 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
-| GPU Core | **gpucontext** | ✅ Stable | Shared interfaces (zero deps) |
-| Framework | **gogpu** | ✅ Stable | Graphics framework, windowing |
-| Graphics | **gg** | ✅ Stable | 2D graphics, 5-engine rasterizer, recording, ggcanvas |
-| Graphics | **g3d** | ✅ v0.1.7 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, 5 backends, ~14K LOC |
-| Graphics | **gg-pdf** | ✅ Stable | PDF export backend for gg |
-| Graphics | **gg-svg** | ✅ Stable | SVG export backend for gg |
-| Application | **ui** | ✅ v0.1.52 | Enterprise GUI toolkit — 24 widgets, Material 3 / Fluent / Cupertino / DevTools themes, Layer Tree compositor, ~211K LOC |
+| GPU Core | **gpucontext** | ✅ v0.27.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
+| Framework | **gogpu** | ✅ v0.52.0 | Graphics framework, windowing, compositor-owned render target (ADR-067), ~96K LOC |
+| Graphics | **gg** | ✅ v0.52.0 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
+| Graphics | **g3d** | ✅ v0.1.7 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~14K LOC |
+| Graphics | **gg-pdf** | ✅ v0.1.0 | PDF export backend for gg |
+| Graphics | **gg-svg** | ✅ v0.1.0 | SVG export backend for gg |
+| Application | **ui** | ✅ v0.1.52 | Enterprise GUI toolkit — 24 widgets, 4 themes, Layer Tree compositor, ~211K LOC |
 | Application | **editor** | 🚧 Early dev | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) |
-| Platform | **systray** | ✅ v0.1.0 | System tray — Win32/macOS/Linux, dark mode, notifications, 72 tests |
-| Platform | **audio** | ✅ v0.1.0 | Pure Go audio engine — WASAPI driver, WAV decoder, Mixer, 42 tests |
-| Platform | **compose** | ✅ v0.1.0 | Multi-process composition — Unix socket transport, LZ4, pull-based flow, ~9K LOC |
+| Platform | **systray** | ✅ v0.2.8 | System tray — Win32/macOS/Linux, dark mode, notifications, ~8K LOC |
+| Platform | **audio** | ✅ v0.1.0 | Pure Go audio engine — WASAPI driver, WAV decoder, Mixer |
+| Platform | **compose** | ✅ v0.1.0 | Multi-process composition — Unix socket transport, LZ4, pull-based flow, ~10K LOC |
 
 ### Platforms
 
