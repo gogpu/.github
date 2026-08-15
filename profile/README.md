@@ -50,7 +50,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | 🎨 | **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
 | 🎨 | **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
 | | | ***Application*** | | | | |
-| 📱 | **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (24 widgets, 4 themes, Layer Tree compositor, ~211K LOC) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
+| 📱 | **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (27 widgets, 4 design systems, Layer Tree compositor, ~211K LOC) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 | 📱 | **[editor](https://github.com/gogpu/editor)** | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) | [![](https://img.shields.io/badge/-early_dev-orange?style=flat-square)](https://github.com/gogpu/editor) | [![](https://img.shields.io/github/stars/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/stargazers) | [![](https://img.shields.io/github/issues/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/pulls) |
 | | | ***Platform Services*** | | | | |
 | 🔧 | **[systray](https://github.com/gogpu/systray)** | Pure Go system tray (Win32/macOS/Linux, zero CGO, ~8K LOC) | [![](https://img.shields.io/github/v/release/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/releases) | [![](https://img.shields.io/github/stars/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/stargazers) | [![](https://img.shields.io/github/issues/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/pulls) |
@@ -209,6 +209,8 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 
 ### Our Articles
 
+- [Google Says Go Is Ideal for AI-Assisted Engineering. We've Been Proving It for a Year.](https://dev.to/kolkov/google-says-go-is-ideal-for-ai-assisted-engineering-weve-been-proving-it-for-a-year-2j7p) — Dev.to
+- [Extracting a GPU Compositor in Pure Go — Patterns from Flutter and Chromium](https://dev.to/kolkov/gogpu-extracting-a-gpu-compositor-in-pure-go-patterns-from-flutter-and-chromium-9ig) — Dev.to
 - [GoGPU: From Idea to 100K Lines](https://dev.to/kolkov/gogpu-from-idea-to-100k-lines-in-two-weeks-building-gos-gpu-ecosystem-3b2) — Dev.to
 - [GoGPU Announcement](https://dev.to/kolkov/gogpu-a-pure-go-graphics-library-for-gpu-programming-2j5d) — Dev.to
 - [First Pure Go DXIL Generator](https://dev.to/kolkov/we-built-the-first-pure-go-dxil-generator-because-optimizing-the-wrong-path-wasnt-enough-35en) — Dev.to
@@ -219,17 +221,17 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 
 | Layer | Component | Status | Description |
 |:------|:----------|:------:|:------------|
-| Foundation | **gputypes** | ✅ v0.5.1 | WebGPU types (webgpu.h spec compliant) |
+| Foundation | **gputypes** | ✅ v0.5.2 | WebGPU types (webgpu.h spec compliant) |
 | Foundation | **naga** | ✅ v0.18.0 | SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~324K LOC |
-| GPU Core | **wgpu** | ✅ v0.31.0 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~254K LOC |
+| GPU Core | **wgpu** | ✅ v0.31.4 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~254K LOC |
 | GPU Core | **galloc** | ✅ v0.1.0 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
-| GPU Core | **gpucontext** | ✅ v0.27.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
-| Framework | **gogpu** | ✅ v0.52.0 | Graphics framework, windowing, compositor-owned render target (ADR-067), ~96K LOC |
-| Graphics | **gg** | ✅ v0.52.0 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
+| GPU Core | **gpucontext** | ✅ v0.28.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
+| Framework | **gogpu** | ✅ v0.53.0 | Graphics framework, windowing, compositor, native printing, ~96K LOC |
+| Graphics | **gg** | ✅ v0.52.1 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
 | Graphics | **g3d** | ✅ v0.1.7 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~14K LOC |
 | Graphics | **gg-pdf** | ✅ v0.1.0 | PDF export backend for gg |
 | Graphics | **gg-svg** | ✅ v0.1.0 | SVG export backend for gg |
-| Application | **ui** | ✅ v0.1.52 | Enterprise GUI toolkit — 24 widgets, 4 themes, Layer Tree compositor, ~211K LOC |
+| Application | **ui** | ✅ v0.1.52 | Enterprise GUI toolkit — 27 widgets, 4 design systems, Layer Tree compositor, ~211K LOC |
 | Application | **editor** | 🚧 Early dev | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) |
 | Platform | **systray** | ✅ v0.2.8 | System tray — Win32/macOS/Linux, dark mode, notifications, ~8K LOC |
 | Platform | **audio** | ✅ v0.1.0 | Pure Go audio engine — WASAPI driver, WAV decoder, Mixer |
@@ -291,5 +293,5 @@ All projects are licensed under the **MIT License**.
 
 <p align="center">
   <sub>Building the GPU computing ecosystem Go deserves</sub><br>
-  <a href="https://github.com/gogpu">github.com/gogpu</a>
+  <a href="https://gogpu.io">gogpu.io</a> · <a href="mailto:info@gogpu.io">info@gogpu.io</a> · <a href="https://github.com/gogpu">GitHub</a>
 </p>
