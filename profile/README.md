@@ -230,8 +230,8 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 | Framework | **gogpu** | ✅ v0.53.0 | Graphics framework, windowing, compositor, native printing, ~104K LOC |
 | Graphics | **gg** | ✅ v0.52.3 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
 | Graphics | **g3d** | ✅ v0.1.9 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~15K LOC |
-| Graphics | **gg-pdf** | ✅ v0.1.0 | PDF export backend for gg |
-| Graphics | **gg-svg** | ✅ v0.1.0 | SVG export backend for gg |
+| Graphics | **gg-pdf** | ✅ v0.2.0 | PDF export backend for gg |
+| Graphics | **gg-svg** | ✅ v0.2.0 | SVG export backend for gg |
 | Application | **ui** | ✅ v0.1.54 | Enterprise GUI toolkit — 27 widgets, 4 design systems, Layer Tree compositor, ~220K LOC |
 | Application | **editor** | 🚧 Early dev | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) |
 | Platform | **systray** | ✅ v0.2.8 | System tray — Win32/macOS/Linux, dark mode, notifications, ~8K LOC |
