@@ -275,8 +275,6 @@ GoGPU is free and open source. If you find it useful, please consider supporting
 
 <a href="https://starhistory.io">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.starhistory.io/png?repos=gogpu/gogpu,gogpu/ui,gogpu/gg,gogpu/wgpu,gogpu/naga&style=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.starhistory.io/png?repos=gogpu/gogpu,gogpu/ui,gogpu/gg,gogpu/wgpu,gogpu/naga&style=comparison" />
    <img alt="GoGPU Ecosystem Star History" src="https://api.starhistory.io/png?repos=gogpu/gogpu,gogpu/ui,gogpu/gg,gogpu/wgpu,gogpu/naga&style=comparison" width="800" />
  </picture>
 </a>
