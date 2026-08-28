@@ -224,11 +224,11 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 |:------|:----------|:------:|:------------|
 | Foundation | **gputypes** | ✅ v0.5.2 | WebGPU types (webgpu.h spec compliant) |
 | Foundation | **naga** | ✅ v0.18.0 | SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~324K LOC |
-| GPU Core | **wgpu** | ✅ v0.31.6 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~254K LOC |
+| GPU Core | **wgpu** | ✅ v0.32.1 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~256K LOC |
 | GPU Core | **galloc** | ✅ v0.2.1 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
-| GPU Core | **gpucontext** | ✅ v0.28.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
-| Framework | **gogpu** | ✅ v0.53.0 | Graphics framework, windowing, compositor, native printing, ~104K LOC |
-| Graphics | **gg** | ✅ v0.52.3 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
+| GPU Core | **gpucontext** | ✅ v0.29.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
+| Framework | **gogpu** | ✅ v0.53.1 | Graphics framework, windowing, compositor, native printing, ~104K LOC |
+| Graphics | **gg** | ✅ v0.52.5 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
 | Graphics | **g3d** | ✅ v0.1.9 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~15K LOC |
 | Graphics | **gg-pdf** | ✅ v0.2.1 | PDF export backend for gg |
 | Graphics | **gg-svg** | ✅ v0.2.1 | SVG export backend for gg |
