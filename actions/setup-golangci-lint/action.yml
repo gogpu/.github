@@ -1,0 +1,187 @@
+name: Set up golangci-lint
+description: >-
+  Installs a pinned golangci-lint release from the Actions cache when it can,
+  verified by sha256 on every run and by its GitHub build attestation when it
+  is downloaded, and puts it on PATH for golangci-lint-action with
+  install-mode none.
+
+inputs:
+  version:
+    description: >-
+      golangci-lint release (vX.Y.Z). The sha256 of each supported platform is
+      pinned below for the default version; any other version needs sha256.
+    default: v2.15.0
+  sha256:
+    description: >-
+      Expected sha256 of the release archive for this runner's platform.
+      Empty uses the value pinned in this action for the default version.
+    default: ''
+  download-base-url:
+    description: >-
+      Base URL of the release downloads. Override it for a mirror; this
+      action's own tests point it at an unreachable host to prove that a cache
+      hit needs no network.
+    default: https://github.com/golangci/golangci-lint/releases/download
+  verify-attestation:
+    description: >-
+      Verify the downloaded archive's GitHub build attestation (SLSA
+      provenance from golangci/golangci-lint's release workflow).
+    default: 'true'
+  cache-key-prefix:
+    description: Prefix of the Actions cache key. The tests vary it to force a cold cache.
+    default: setup-golangci-lint
+  github-token:
+    description: Token for gh attestation verify.
+    default: ${{ github.token }}
+
+outputs:
+  cache-hit:
+    description: Whether the archive came from the Actions cache.
+    value: ${{ steps.restore.outputs.cache-hit }}
+  path:
+    description: The directory holding the golangci-lint binary, already on PATH.
+    value: ${{ steps.resolve.outputs.bin-dir }}
+
+runs:
+  using: composite
+  steps:
+    - name: Resolve the release archive
+      id: resolve
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+        SHA256_INPUT: ${{ inputs.sha256 }}
+      run: |
+        set -euo pipefail
+        case "$RUNNER_OS" in
+          Linux) os=linux ;;
+          macOS) os=darwin ;;
+          *) echo "::error::setup-golangci-lint supports Linux and macOS runners, not $RUNNER_OS. Lint other targets on Linux with GOOS set."; exit 1 ;;
+        esac
+        case "$RUNNER_ARCH" in
+          X64) arch=amd64 ;;
+          ARM64) arch=arm64 ;;
+          *) echo "::error::unsupported runner architecture $RUNNER_ARCH"; exit 1 ;;
+        esac
+
+        # sha256 of each v2.15.0 archive, as GitHub records it for the release
+        # asset. A version bump updates the default version and this table in
+        # one commit.
+        pinned=""
+        if [ "$VERSION" = v2.15.0 ]; then
+          case "$os-$arch" in
+            linux-amd64)  pinned=9b7fe6a6bf6334b98decf8d86b11415ea7889afdabdd1959fdce23af2a9ebcea ;;
+            linux-arm64)  pinned=b4d8f17068b35ee6060cc2f69a16fb48740d706fbba81661c318649c114a6998 ;;
+            darwin-amd64) pinned=767b899a28285e88ded2823d5dcc4bc5ef681173eb2d80f029a7b17ee4ece3b8 ;;
+            darwin-arm64) pinned=d1e409481a8ca846c4bc97e781eb5cb1bd5c23353a0b3977a1cbda1b1b6447d5 ;;
+          esac
+        fi
+        sha="${SHA256_INPUT:-$pinned}"
+        if [ -z "$sha" ]; then
+          echo "::error::no sha256 pinned for golangci-lint $VERSION on $os-$arch; pass the sha256 input"
+          exit 1
+        fi
+
+        name="golangci-lint-${VERSION#v}-$os-$arch"
+        archive_dir="$HOME/.cache/setup-golangci-lint/$VERSION"
+        {
+          echo "name=$name"
+          echo "sha256=$sha"
+          echo "platform=$os-$arch"
+          echo "archive-dir=$archive_dir"
+          echo "archive=$archive_dir/$name.tar.gz"
+          echo "bin-dir=$RUNNER_TEMP/setup-golangci-lint/$VERSION"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Restore the archive from the Actions cache
+      id: restore
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ${{ steps.resolve.outputs.archive-dir }}
+        key: ${{ inputs.cache-key-prefix }}-${{ inputs.version }}-${{ steps.resolve.outputs.platform }}-${{ steps.resolve.outputs.sha256 }}
+
+    # Two routes per attempt. On 2026-11-08 the releases/download URL returned
+    # HTTP 504 for anonymous requests for over an hour (githubstatus green),
+    # while the API asset route that gh release download uses served the same
+    # file. The download-base-url input applies to the second route only.
+    - name: Download the archive (cache miss)
+      if: steps.restore.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        TAG: ${{ inputs.version }}
+        FILE: ${{ steps.resolve.outputs.name }}.tar.gz
+        URL: ${{ inputs.download-base-url }}/${{ inputs.version }}/${{ steps.resolve.outputs.name }}.tar.gz
+        ARCHIVE: ${{ steps.resolve.outputs.archive }}
+        ARCHIVE_DIR: ${{ steps.resolve.outputs.archive-dir }}
+      run: |
+        set -euo pipefail
+        mkdir -p "$ARCHIVE_DIR"
+        for attempt in 1 2 3 4; do
+          rm -f "$ARCHIVE"
+          if gh release download "$TAG" --repo golangci/golangci-lint --pattern "$FILE" --dir "$ARCHIVE_DIR"; then
+            exit 0
+          fi
+          if curl --fail --silent --show-error --location --retry 2 --retry-all-errors \
+              --retry-delay 5 --connect-timeout 20 --output "$ARCHIVE" "$URL"; then
+            exit 0
+          fi
+          echo "attempt $attempt: both the API route and $URL failed"
+          sleep $((attempt * 15))
+        done
+        echo "::error::could not download $FILE"
+        exit 1
+
+    # Every run, hit or miss: a cache entry that does not match the pinned
+    # hash never reaches PATH.
+    - name: Verify the archive's sha256
+      shell: bash
+      env:
+        ARCHIVE: ${{ steps.resolve.outputs.archive }}
+        EXPECTED: ${{ steps.resolve.outputs.sha256 }}
+      run: |
+        set -euo pipefail
+        if command -v sha256sum > /dev/null; then
+          actual=$(sha256sum "$ARCHIVE" | cut -d' ' -f1)
+        else
+          actual=$(shasum -a 256 "$ARCHIVE" | cut -d' ' -f1)
+        fi
+        if [ "$actual" != "$EXPECTED" ]; then
+          echo "::error::sha256 mismatch for $(basename "$ARCHIVE"): expected $EXPECTED, got $actual"
+          exit 1
+        fi
+        echo "sha256 OK: $actual"
+
+    - name: Verify the build attestation (cache miss)
+      if: steps.restore.outputs.cache-hit != 'true' && inputs.verify-attestation == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        ARCHIVE: ${{ steps.resolve.outputs.archive }}
+      run: gh attestation verify "$ARCHIVE" --repo golangci/golangci-lint
+
+    - name: Save the verified archive to the Actions cache
+      if: steps.restore.outputs.cache-hit != 'true'
+      uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ${{ steps.resolve.outputs.archive-dir }}
+        key: ${{ inputs.cache-key-prefix }}-${{ inputs.version }}-${{ steps.resolve.outputs.platform }}-${{ steps.resolve.outputs.sha256 }}
+
+    - name: Install golangci-lint on PATH
+      shell: bash
+      env:
+        ARCHIVE: ${{ steps.resolve.outputs.archive }}
+        NAME: ${{ steps.resolve.outputs.name }}
+        BIN_DIR: ${{ steps.resolve.outputs.bin-dir }}
+        VERSION: ${{ inputs.version }}
+      run: |
+        set -euo pipefail
+        mkdir -p "$BIN_DIR"
+        tar -xzf "$ARCHIVE" -C "$BIN_DIR" --strip-components=1 "$NAME/golangci-lint"
+        echo "$BIN_DIR" >> "$GITHUB_PATH"
+        installed=$("$BIN_DIR/golangci-lint" version --short 2>/dev/null || "$BIN_DIR/golangci-lint" version)
+        echo "installed: $installed"
+        case "$installed" in
+          *"${VERSION#v}"*) ;;
+          *) echo "::error::installed golangci-lint reports '$installed', expected $VERSION"; exit 1 ;;
+        esac

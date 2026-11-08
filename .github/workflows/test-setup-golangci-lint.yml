@@ -1,0 +1,118 @@
+name: Test setup-golangci-lint
+
+# Proves the three properties the action exists for:
+#   cold   - an empty cache downloads, verifies sha256 and the attestation,
+#            and installs the pinned version;
+#   warm   - a cache hit needs no network: the download URL points at an
+#            unreachable host and the install still succeeds;
+#   poison - a cached archive whose sha256 does not match the pin is rejected
+#            and never reaches PATH, even with no network to fall back on.
+# Each run uses its own cache key prefix and deletes its entries at the end.
+
+on:
+  pull_request:
+    paths:
+      - actions/setup-golangci-lint/**
+      - .github/workflows/test-setup-golangci-lint.yml
+  push:
+    branches: [main]
+    paths:
+      - actions/setup-golangci-lint/**
+      - .github/workflows/test-setup-golangci-lint.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PREFIX: test-${{ github.run_id }}-${{ github.run_attempt }}
+
+jobs:
+  cold:
+    name: Cold cache - ${{ matrix.runner }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-latest, ubuntu-24.04-arm, macos-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: setup
+        uses: ./actions/setup-golangci-lint
+        with:
+          cache-key-prefix: ${{ env.PREFIX }}
+      - name: Downloaded, not restored, and on PATH
+        env:
+          HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: |
+          [ "$HIT" != true ] || { echo "::error::expected a cache miss"; exit 1; }
+          golangci-lint version
+
+  warm-offline:
+    name: Warm cache, no network to the release host
+    needs: cold
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - id: setup
+        uses: ./actions/setup-golangci-lint
+        with:
+          cache-key-prefix: ${{ env.PREFIX }}
+          download-base-url: https://unreachable.invalid/releases
+      - name: Restored from the cache and on PATH
+        env:
+          HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: |
+          [ "$HIT" = true ] || { echo "::error::expected a cache hit"; exit 1; }
+          golangci-lint version
+
+  # A cache entry under the right key whose bytes do not match the pinned
+  # sha256 (a poisoned or corrupted entry). The download URL is unreachable,
+  # so the only way to pass would be to trust the cache; the action must fail
+  # and leave nothing on PATH.
+  poisoned-cache:
+    name: A cache entry with the wrong sha256 is rejected
+    runs-on: ubuntu-latest
+    env:
+      ARCHIVE_DIR: /home/runner/.cache/setup-golangci-lint/v2.15.0
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Write a bogus archive where the real one would be
+        run: |
+          mkdir -p "$ARCHIVE_DIR"
+          echo "not golangci-lint" > "$ARCHIVE_DIR/golangci-lint-2.15.0-linux-amd64.tar.gz"
+      - uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ env.ARCHIVE_DIR }}
+          key: ${{ env.PREFIX }}-poison-v2.15.0-linux-amd64-9b7fe6a6bf6334b98decf8d86b11415ea7889afdabdd1959fdce23af2a9ebcea
+      - run: rm -rf "$ARCHIVE_DIR"
+      - id: setup
+        continue-on-error: true
+        uses: ./actions/setup-golangci-lint
+        with:
+          cache-key-prefix: ${{ env.PREFIX }}-poison
+          download-base-url: https://unreachable.invalid/releases
+      - name: Restored, rejected, nothing installed
+        env:
+          OUTCOME: ${{ steps.setup.outcome }}
+          HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: |
+          [ "$HIT" = true ] || { echo "::error::expected the poisoned entry to be restored, cache-hit=$HIT"; exit 1; }
+          [ "$OUTCOME" = failure ] || { echo "::error::expected the action to fail, got $OUTCOME"; exit 1; }
+          if command -v golangci-lint > /dev/null; then echo "::error::golangci-lint is on PATH"; exit 1; fi
+
+  cleanup:
+    name: Delete this run's cache entries
+    if: always()
+    needs: [cold, warm-offline, poisoned-cache]
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          gh cache list --key "$PREFIX" --limit 100 --json key --jq '.[].key' |
+            while read -r key; do gh cache delete "$key"; done
