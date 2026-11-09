@@ -10,7 +10,7 @@
 
 <p align="center">
   <strong>Pure Go GPU Computing Ecosystem</strong><br>
-  1.27M+ lines of code. GPU power, Go simplicity. Zero CGO.
+  1.4M+ lines of code. GPU power, Go simplicity. Zero CGO.
 </p>
 
 <p align="center">
@@ -36,26 +36,26 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | | Library | Purpose | Version | Stars | Issues | PRs |
 |:-:|:--------|:---------------------------------------------------------------------|:-------:|:-----:|:------:|:---:|
 | | | ***Foundation*** | | | | |
-| 🧱 | **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types (webgpu.h spec compliant) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
-| 🧱 | **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL/DXIL shader compiler (~324K LOC) | [![](https://img.shields.io/github/v/release/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/releases) | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/stargazers) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
+| 🧱 | **[gputypes](https://github.com/gogpu/gputypes)** | WebGPU types shared across the ecosystem (the webgpu.h types and members) | [![](https://img.shields.io/github/v/release/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/releases) | [![](https://img.shields.io/github/stars/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gputypes?style=flat-square&label=)](https://github.com/gogpu/gputypes/pulls) |
+| 🧱 | **[naga](https://github.com/gogpu/naga)** | WGSL → SPIR-V/MSL/GLSL/HLSL/DXIL shader compiler (~407K LOC) | [![](https://img.shields.io/github/v/release/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/releases) | [![](https://img.shields.io/github/stars/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/stargazers) | [![](https://img.shields.io/github/issues/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/naga?style=flat-square&label=)](https://github.com/gogpu/naga/pulls) |
 | | | ***GPU Core*** | | | | |
-| ⚙️ | **[wgpu](https://github.com/gogpu/wgpu)** | Unified Go WebGPU — Pure Go + Rust FFI + Browser (Vulkan/Metal/DX12/GLES/Software, ~254K LOC) | [![](https://img.shields.io/github/v/release/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/releases) | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/pulls) |
+| ⚙️ | **[wgpu](https://github.com/gogpu/wgpu)** | Unified Go WebGPU — Pure Go + Rust FFI + Browser (Vulkan/Metal/DX12/GLES/Software, ~350K LOC) | [![](https://img.shields.io/github/v/release/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/releases) | [![](https://img.shields.io/github/stars/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/wgpu?style=flat-square&label=)](https://github.com/gogpu/wgpu/pulls) |
 | ⚙️ | **[gpucontext](https://github.com/gogpu/gpucontext)** | Shared interfaces (DeviceProvider, EventSource) | [![](https://img.shields.io/github/v/release/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/releases) | [![](https://img.shields.io/github/stars/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gpucontext?style=flat-square&label=)](https://github.com/gogpu/gpucontext/pulls) |
-| ⚙️ | **[galloc](https://github.com/gogpu/galloc)** | O(1) offset allocator for GPU memory sub-allocation (~2.5K LOC) | [![](https://img.shields.io/github/v/release/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/releases) | [![](https://img.shields.io/github/stars/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/stargazers) | [![](https://img.shields.io/github/issues/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/pulls) |
+| ⚙️ | **[galloc](https://github.com/gogpu/galloc)** | O(1) offset allocator for GPU memory sub-allocation (~2.7K LOC) | [![](https://img.shields.io/github/v/release/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/releases) | [![](https://img.shields.io/github/stars/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/stargazers) | [![](https://img.shields.io/github/issues/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/galloc?style=flat-square&label=)](https://github.com/gogpu/galloc/pulls) |
 | | | ***Framework*** | | | | |
-| 🖥️ | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing, compositor (ADR-067, ~104K LOC) | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
+| 🖥️ | **[gogpu](https://github.com/gogpu/gogpu)** | Graphics framework, windowing, compositor (ADR-067, ~110K LOC) | [![](https://img.shields.io/github/v/release/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/releases) | [![](https://img.shields.io/github/stars/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gogpu?style=flat-square&label=)](https://github.com/gogpu/gogpu/pulls) |
 | | | ***Graphics*** | | | | |
-| 🎨 | **[gg](https://github.com/gogpu/gg)** | 2D graphics, 5-engine smart rasterizer, GPU acceleration (~312K LOC) | [![](https://img.shields.io/github/v/release/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/pulls) |
-| 🎨 | **[g3d](https://github.com/gogpu/g3d)** | Pure Go 3D rendering (scene graph, PBR materials, forward renderer, ~15K LOC) | [![](https://img.shields.io/github/v/release/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/releases) | [![](https://img.shields.io/github/stars/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/stargazers) | [![](https://img.shields.io/github/issues/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/pulls) |
+| 🎨 | **[gg](https://github.com/gogpu/gg)** | 2D graphics, 5-engine smart rasterizer, GPU acceleration (~317K LOC) | [![](https://img.shields.io/github/v/release/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg?style=flat-square&label=)](https://github.com/gogpu/gg/pulls) |
+| 🎨 | **[g3d](https://github.com/gogpu/g3d)** | Pure Go 3D rendering (scene graph, PBR materials, forward renderer, ~16K LOC) | [![](https://img.shields.io/github/v/release/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/releases) | [![](https://img.shields.io/github/stars/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/stargazers) | [![](https://img.shields.io/github/issues/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/g3d?style=flat-square&label=)](https://github.com/gogpu/g3d/pulls) |
 | 🎨 | **[gg-pdf](https://github.com/gogpu/gg-pdf)** | PDF export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-pdf?style=flat-square&label=)](https://github.com/gogpu/gg-pdf/pulls) |
 | 🎨 | **[gg-svg](https://github.com/gogpu/gg-svg)** | SVG export backend for gg recording | [![](https://img.shields.io/github/v/release/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/releases) | [![](https://img.shields.io/github/stars/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gg-svg?style=flat-square&label=)](https://github.com/gogpu/gg-svg/pulls) |
 | | | ***Application*** | | | | |
-| 📱 | **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (27 widgets, 4 design systems, Layer Tree compositor, ~220K LOC) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
+| 📱 | **[ui](https://github.com/gogpu/ui)** | Enterprise GUI toolkit (27 widgets, 4 design systems, Layer Tree compositor, ~223K LOC) | [![](https://img.shields.io/github/v/release/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/releases) | [![](https://img.shields.io/github/stars/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/stargazers) | [![](https://img.shields.io/github/issues/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/ui?style=flat-square&label=)](https://github.com/gogpu/ui/pulls) |
 | 📱 | **[editor](https://github.com/gogpu/editor)** | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) | [![](https://img.shields.io/badge/-early_dev-orange?style=flat-square)](https://github.com/gogpu/editor) | [![](https://img.shields.io/github/stars/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/stargazers) | [![](https://img.shields.io/github/issues/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/editor?style=flat-square&label=)](https://github.com/gogpu/editor/pulls) |
 | | | ***Platform Services*** | | | | |
-| 🔧 | **[systray](https://github.com/gogpu/systray)** | Pure Go system tray (Win32/macOS/Linux, zero CGO, ~8K LOC) | [![](https://img.shields.io/github/v/release/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/releases) | [![](https://img.shields.io/github/stars/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/stargazers) | [![](https://img.shields.io/github/issues/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/pulls) |
+| 🔧 | **[systray](https://github.com/gogpu/systray)** | Pure Go system tray (Win32/macOS/Linux, zero CGO, ~9K LOC) | [![](https://img.shields.io/github/v/release/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/releases) | [![](https://img.shields.io/github/stars/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/stargazers) | [![](https://img.shields.io/github/issues/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/systray?style=flat-square&label=)](https://github.com/gogpu/systray/pulls) |
 | 🔧 | **[audio](https://github.com/gogpu/audio)** | Pure Go audio engine (WASAPI/CoreAudio/PulseAudio, zero CGO) | [![](https://img.shields.io/github/v/release/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/releases) | [![](https://img.shields.io/github/stars/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/stargazers) | [![](https://img.shields.io/github/issues/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/audio?style=flat-square&label=)](https://github.com/gogpu/audio/pulls) |
-| 🔧 | **[compose](https://github.com/gogpu/compose)** | Multi-process composition (Unix socket IPC, LZ4, ~10K LOC) | [![](https://img.shields.io/github/v/release/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/releases) | [![](https://img.shields.io/github/stars/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/stargazers) | [![](https://img.shields.io/github/issues/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/pulls) |
+| 🔧 | **[compose](https://github.com/gogpu/compose)** | Multi-process composition (Unix socket IPC, LZ4, ~11K LOC) | [![](https://img.shields.io/github/v/release/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/releases) | [![](https://img.shields.io/github/stars/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/stargazers) | [![](https://img.shields.io/github/issues/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/compose?style=flat-square&label=)](https://github.com/gogpu/compose/pulls) |
 | 🎮 | **[gamepad](https://github.com/gogpu/gamepad)** | Pure Go gamepad/joystick input — XInput, evdev, IOKit, W3C | [![](https://img.shields.io/badge/-early_dev-orange?style=flat-square)](https://github.com/gogpu/gamepad) | [![](https://img.shields.io/github/stars/gogpu/gamepad?style=flat-square&label=)](https://github.com/gogpu/gamepad/stargazers) | [![](https://img.shields.io/github/issues/gogpu/gamepad?style=flat-square&label=)](https://github.com/gogpu/gamepad/issues) | [![](https://img.shields.io/github/issues-pr/gogpu/gamepad?style=flat-square&label=)](https://github.com/gogpu/gamepad/pulls) |
 
 **Pure Go** | Zero CGO | Cross-platform
@@ -82,7 +82,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 │    gogpu/gpucontext (Shared Interfaces)                     │
 │ DeviceProvider, SurfaceCompositor, DamageSource, EventSource│
 ├─────────────────────────────────────────────────────────────┤
-│    gogpu/gputypes (WebGPU Types, webgpu.h compliant)        │
+│    gogpu/gputypes (WebGPU Types, webgpu.h members)          │
 │       TextureFormat, BufferUsage, PresentMode, etc.         │
 ├─────────────────────────────────────────────────────────────┤
 │       gogpu/wgpu (Unified WebGPU: Pure Go │ Rust FFI │ WASM)│
@@ -105,7 +105,7 @@ Inspired by [this discussion on r/golang](https://www.reddit.com/r/golang/commen
 | **Smart Rasterizer** | 5 algorithms with per-path auto-selection (scanline, 4×4 tiles, 16×16 tiles, SDF, compute) |
 | **Triple Backend** | Pure Go (default), Rust FFI (`-tags rust`), Browser WASM — same API, build tag selects |
 | **Layered Design** | Use only what you need |
-| **webgpu.h Compliant** | Binary-compatible with wgpu-native |
+| **webgpu.h Coverage** | The same types and members as webgpu.h; the Rust FFI backend converts them at the C boundary |
 
 ---
 
@@ -210,8 +210,14 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 
 ### Our Articles
 
+More on the [GoGPU organization page on Dev.to](https://dev.to/gogpu).
+
+- [A Shader Loop That Never Ran: What GPU Readback Found in gogpu/naga, a Go WGSL Compiler](https://dev.to/gogpu/a-shader-loop-that-never-ran-what-gpu-readback-found-in-gogpunaga-a-go-wgsl-compiler-41ja) — Dev.to
+- [gogpu/ui v0.1.54: Flutter's Gesture System in Pure Go — Arena, Recognizers, and All](https://dev.to/gogpu/gogpuui-v0154-we-built-flutters-gesture-system-in-pure-go-arena-recognizers-and-all-31bl) — Dev.to
 - [Google Says Go Is Ideal for AI-Assisted Engineering. We've Been Proving It for a Year.](https://dev.to/kolkov/google-says-go-is-ideal-for-ai-assisted-engineering-weve-been-proving-it-for-a-year-2j7p) — Dev.to
-- [Extracting a GPU Compositor in Pure Go — Patterns from Flutter and Chromium](https://dev.to/kolkov/gogpu-extracting-a-gpu-compositor-in-pure-go-patterns-from-flutter-and-chromium-9ig) — Dev.to
+- [Extracting a GPU Compositor in Pure Go — Patterns from Flutter and Chromium](https://dev.to/gogpu/gogpu-extracting-a-gpu-compositor-in-pure-go-patterns-from-flutter-and-chromium-9ig) — Dev.to
+- [We Built a Pure Go 3D Renderer — Then Embedded It Inside a GUI Widget](https://dev.to/gogpu/we-built-a-pure-go-3d-renderer-then-embedded-it-inside-a-gui-widget-4mo4) — Dev.to
+- [gogpu/compose: Multi-Process GUI Composition in Pure Go](https://dev.to/gogpu/gogpucompose-multi-process-gui-composition-in-pure-go-387i) — Dev.to
 - [GoGPU: From Idea to 100K Lines](https://dev.to/kolkov/gogpu-from-idea-to-100k-lines-in-two-weeks-building-gos-gpu-ecosystem-3b2) — Dev.to
 - [GoGPU Announcement](https://dev.to/kolkov/gogpu-a-pure-go-graphics-library-for-gpu-programming-2j5d) — Dev.to
 - [First Pure Go DXIL Generator](https://dev.to/kolkov/we-built-the-first-pure-go-dxil-generator-because-optimizing-the-wrong-path-wasnt-enough-35en) — Dev.to
@@ -222,21 +228,21 @@ We haven't had time to write comprehensive tutorials yet — we've been focused 
 
 | Layer | Component | Status | Description |
 |:------|:----------|:------:|:------------|
-| Foundation | **gputypes** | ✅ v0.5.2 | WebGPU types (webgpu.h spec compliant) |
-| Foundation | **naga** | ✅ v0.18.0 | SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~324K LOC |
-| GPU Core | **wgpu** | ✅ v0.32.1 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~256K LOC |
+| Foundation | **gputypes** | ✅ v0.8.2 | WebGPU types shared across the ecosystem (the webgpu.h types and members) |
+| Foundation | **naga** | ✅ v0.21.9 | SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~407K LOC |
+| GPU Core | **wgpu** | ✅ v0.34.12 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~350K LOC |
 | GPU Core | **galloc** | ✅ v0.2.1 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
-| GPU Core | **gpucontext** | ✅ v0.29.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
-| Framework | **gogpu** | ✅ v0.53.1 | Graphics framework, windowing, compositor, native printing, ~104K LOC |
-| Graphics | **gg** | ✅ v0.52.5 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~312K LOC |
-| Graphics | **g3d** | ✅ v0.1.9 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~15K LOC |
+| GPU Core | **gpucontext** | ✅ v0.32.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
+| Framework | **gogpu** | ✅ v0.54.1 | Graphics framework, windowing, compositor, native printing, ~110K LOC |
+| Graphics | **gg** | ✅ v0.52.7 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~317K LOC |
+| Graphics | **g3d** | ✅ v0.1.12 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~16K LOC |
 | Graphics | **gg-pdf** | ✅ v0.2.1 | PDF export backend for gg |
 | Graphics | **gg-svg** | ✅ v0.2.1 | SVG export backend for gg |
-| Application | **ui** | ✅ v0.1.54 | Enterprise GUI toolkit — 27 widgets, 4 design systems, Layer Tree compositor, ~220K LOC |
+| Application | **ui** | ✅ v0.1.55 | Enterprise GUI toolkit — 27 widgets, 4 design systems, Layer Tree compositor, ~223K LOC |
 | Application | **editor** | 🚧 Early dev | Text/Code editor widget — GPU-accelerated, embeddable (like Monaco) |
-| Platform | **systray** | ✅ v0.2.8 | System tray — Win32/macOS/Linux, dark mode, notifications, ~8K LOC |
+| Platform | **systray** | ✅ v0.3.0 | System tray — Win32/macOS/Linux, dark mode, notifications, ~9K LOC |
 | Platform | **audio** | ✅ v0.1.0 | Pure Go audio engine — WASAPI driver, WAV decoder, Mixer |
-| Platform | **compose** | ✅ v0.2.0 | Multi-process composition — Unix socket transport, LZ4, pull-based flow, ~10K LOC |
+| Platform | **compose** | ✅ v0.2.0 | Multi-process composition — Unix socket transport, LZ4, pull-based flow, ~11K LOC |
 | Platform | **gamepad** | 🚧 Early dev | Pure Go gamepad/joystick input — XInput, evdev, IOKit, W3C Gamepad API |
 
 ### Platforms
@@ -305,5 +311,5 @@ All projects are licensed under the **MIT License**.
 
 <p align="center">
   <sub>Building the GPU computing ecosystem Go deserves</sub><br>
-  <a href="https://gogpu.io">gogpu.io</a> · <a href="mailto:info@gogpu.io">info@gogpu.io</a> · <a href="https://github.com/gogpu">GitHub</a>
+  <a href="https://gogpu.dev">gogpu.dev</a> · <a href="mailto:info@gogpu.io">info@gogpu.io</a> · <a href="https://github.com/gogpu">GitHub</a>
 </p>
