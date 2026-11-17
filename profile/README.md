@@ -230,8 +230,8 @@ More on the [GoGPU organization page on Dev.to](https://dev.to/gogpu).
 | Layer | Component | Status | Description |
 |:------|:----------|:------:|:------------|
 | Foundation | **gputypes** | ✅ v0.9.1 | WebGPU types shared across the ecosystem (the webgpu.h types and members) |
-| Foundation | **naga** | ✅ v0.22.2 | WGSL and GLSL (preview) → SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~522K LOC |
-| GPU Core | **wgpu** | ✅ v0.34.15 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM, ~436K LOC |
+| Foundation | **naga** | ✅ v0.22.4 | WGSL and GLSL (preview) → SPIR-V, MSL, GLSL, HLSL + DXIL shader compiler, ~522K LOC |
+| GPU Core | **wgpu** | ✅ v0.35.0 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM; three public packages (root, thin `hal`, `wgputest`), ~436K LOC |
 | GPU Core | **galloc** | ✅ v0.2.1 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
 | GPU Core | **gpucontext** | ✅ v0.32.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
 | Framework | **gogpu** | ✅ v0.54.1 | Graphics framework, windowing, compositor, native printing, ~146K LOC |
