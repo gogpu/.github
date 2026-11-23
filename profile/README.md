@@ -234,7 +234,7 @@ More on the [GoGPU organization page on Dev.to](https://dev.to/gogpu).
 | GPU Core | **wgpu** | ✅ v0.35.5 | Triple-backend: Pure Go (Vulkan/Metal/DX12/GLES/Software), Rust FFI, Browser WASM; three public packages (root, thin `hal`, `wgputest`); adapter enumeration and hardware identity (UUID/PCI/LUID), ~394K LOC |
 | GPU Core | **galloc** | ✅ v0.2.1 | O(1) offset allocator (TLSF-inspired, 256 bins, zero heap allocs) |
 | GPU Core | **gpucontext** | ✅ v0.32.0 | Shared interfaces — DeviceProvider, SurfaceCompositor, DamageSource |
-| Framework | **gogpu** | ✅ v0.54.1 | Graphics framework, windowing, compositor, native printing, ~117K LOC |
+| Framework | **gogpu** | ✅ v0.55.0 | Graphics framework, windowing, compositor, native printing, ~117K LOC |
 | Graphics | **gg** | ✅ v0.52.7 | 2D graphics, 5-engine rasterizer, GPU acceleration, recording, ggcanvas, ~317K LOC |
 | Graphics | **g3d** | ✅ v0.1.12 | Pure Go 3D rendering — scene graph, PBR materials, forward renderer, ~16K LOC |
 | Graphics | **gg-pdf** | ✅ v0.2.1 | PDF export backend for gg |
